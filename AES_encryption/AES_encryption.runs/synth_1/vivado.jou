@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sun Nov 26 22:36:48 2023
+# Process ID: 19400
+# Current directory: D:/vivadoproj/AES_encryption/AES_encryption.runs/synth_1
+# Command line: vivado.exe -log ShiftRowns.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ShiftRowns.tcl
+# Log file: D:/vivadoproj/AES_encryption/AES_encryption.runs/synth_1/ShiftRowns.vds
+# Journal file: D:/vivadoproj/AES_encryption/AES_encryption.runs/synth_1\vivado.jou
+# Running On: LAPTOP-LCTKS4O4, OS: Windows, CPU Frequency: 3294 MHz, CPU Physical cores: 12, Host memory: 16487 MB
+#-----------------------------------------------------------
+source ShiftRowns.tcl -notrace
