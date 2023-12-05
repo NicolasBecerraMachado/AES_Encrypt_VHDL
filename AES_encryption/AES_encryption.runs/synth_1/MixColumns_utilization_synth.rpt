@@ -1,10 +1,10 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Sun Nov 26 22:38:04 2023
+| Date         : Fri Dec  1 20:11:32 2023
 | Host         : LAPTOP-LCTKS4O4 running 64-bit major release  (build 9200)
-| Command      : report_utilization -file ShiftRowns_utilization_synth.rpt -pb ShiftRowns_utilization_synth.pb
-| Design       : ShiftRowns
+| Command      : report_utilization -file MixColumns_utilization_synth.rpt -pb MixColumns_utilization_synth.pb
+| Design       : MixColumns
 | Device       : xc7a35tcpg236-1
 | Speed File   : -1
 | Design State : Synthesized
@@ -31,12 +31,12 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |  288 |     0 |          0 |     20800 |  1.38 |
-|   LUT as Logic          |  288 |     0 |          0 |     20800 |  1.38 |
+| Slice LUTs*             |  594 |     0 |          0 |     20800 |  2.86 |
+|   LUT as Logic          |  594 |     0 |          0 |     20800 |  2.86 |
 |   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
-| Slice Registers         |  321 |     0 |          0 |     41600 |  0.77 |
-|   Register as Flip Flop |  193 |     0 |          0 |     41600 |  0.46 |
-|   Register as Latch     |  128 |     0 |          0 |     41600 |  0.31 |
+| Slice Registers         |  513 |     0 |          0 |     41600 |  1.23 |
+|   Register as Flip Flop |  257 |     0 |          0 |     41600 |  0.62 |
+|   Register as Latch     |  256 |     0 |          0 |     41600 |  0.62 |
 | F7 Muxes                |    0 |     0 |          0 |     16300 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |      8150 |  0.00 |
 +-------------------------+------+-------+------------+-----------+-------+
@@ -56,8 +56,8 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 96    |          Yes |           - |          Set |
-| 225   |          Yes |           - |        Reset |
+| 128   |          Yes |           - |          Set |
+| 385   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 0     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -151,13 +151,16 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT2     |  192 |                 LUT |
+| LUT3     |  256 |                 LUT |
+| LUT2     |  256 |                 LUT |
+| LDCE     |  256 |        Flop & Latch |
 | IBUF     |  130 |                  IO |
 | OBUF     |  129 |                  IO |
-| LDCE     |  128 |        Flop & Latch |
-| FDCE     |   97 |        Flop & Latch |
-| LUT3     |   96 |                 LUT |
-| FDPE     |   96 |        Flop & Latch |
+| FDCE     |  129 |        Flop & Latch |
+| FDPE     |  128 |        Flop & Latch |
+| LUT6     |  112 |                 LUT |
+| LUT5     |   64 |                 LUT |
+| LUT1     |    2 |                 LUT |
 | BUFG     |    2 |               Clock |
 +----------+------+---------------------+
 

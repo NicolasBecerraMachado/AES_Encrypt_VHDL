@@ -1,22 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1701034601">
-  <File Type="PA-TCL" Name="ShiftRowns.tcl"/>
-  <File Type="REPORTS-TCL" Name="ShiftRowns_reports.tcl"/>
-  <File Type="RDS-RDS" Name="ShiftRowns.vds"/>
-  <File Type="RDS-UTIL" Name="ShiftRowns_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="ShiftRowns_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="ShiftRowns.dcp"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1701457862" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ShiftRowns.dcp">
+  <File Type="PA-TCL" Name="MixColumns.tcl"/>
+  <File Type="REPORTS-TCL" Name="MixColumns_reports.tcl"/>
+  <File Type="RDS-RDS" Name="MixColumns.vds"/>
+  <File Type="RDS-UTIL" Name="MixColumns_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="MixColumns_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="MixColumns.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/LUT_mul2.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/LUT_mul3.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/MixColumns.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/ShiftRowns.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/S_box.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="ShiftRowns"/>
+      <Option Name="TopModule" Val="MixColumns"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -28,6 +54,14 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/ShiftRowns.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>

@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../AES_encryption.srcs/sources_1/new/ShiftRowns.vhd" \
-"../../../../AES_encryption.srcs/sim_1/new/tst_shiftRows.vhd" \
-
-# Do not sort compile order
-nosort

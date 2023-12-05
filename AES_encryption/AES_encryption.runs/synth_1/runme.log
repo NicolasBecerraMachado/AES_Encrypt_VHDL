@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log ShiftRowns.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ShiftRowns.tcl
+    with args -log MixColumns.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MixColumns.tcl
 
 
 ECHO is off.
@@ -13,53 +13,96 @@ ECHO is off.
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
-source ShiftRowns.tcl -notrace
-create_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 484.406 ; gain = 200.543
-Command: synth_design -top ShiftRowns -part xc7a35tcpg236-1
+source MixColumns.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 484.820 ; gain = 200.812
+Command: read_checkpoint -auto_incremental -incremental D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/utils_1/imports/synth_1/ShiftRowns.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/utils_1/imports/synth_1/ShiftRowns.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top MixColumns -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 21376
+INFO: [Synth 8-7075] Helper process launched with PID 21816
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 922.207 ; gain = 412.922
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 924.258 ; gain = 407.980
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'ShiftRowns' [D:/vivadoproj/AES_encryption/AES_encryption.srcs/sources_1/new/ShiftRowns.vhd:16]
-WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [D:/vivadoproj/AES_encryption/AES_encryption.srcs/sources_1/new/ShiftRowns.vhd:25]
-WARNING: [Synth 8-614] signal 'input' is read in the process but is not in the sensitivity list [D:/vivadoproj/AES_encryption/AES_encryption.srcs/sources_1/new/ShiftRowns.vhd:25]
-INFO: [Synth 8-256] done synthesizing module 'ShiftRowns' (0#1) [D:/vivadoproj/AES_encryption/AES_encryption.srcs/sources_1/new/ShiftRowns.vhd:16]
+INFO: [Synth 8-638] synthesizing module 'MixColumns' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:15]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:4' bound to instance 'l' of component 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:41]
+INFO: [Synth 8-638] synthesizing module 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:9]
+INFO: [Synth 8-226] default block is never used [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'LUT_mul2' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:9]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:4' bound to instance 'l' of component 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:4' bound to instance 'l' of component 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:4' bound to instance 'l' of component 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:4' bound to instance 'l' of component 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:4' bound to instance 'l' of component 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:4' bound to instance 'l' of component 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:4' bound to instance 'l' of component 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:4' bound to instance 'l' of component 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:4' bound to instance 'l' of component 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:4' bound to instance 'l' of component 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:4' bound to instance 'l' of component 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:4' bound to instance 'l' of component 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:4' bound to instance 'l' of component 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:4' bound to instance 'l' of component 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul2' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd:4' bound to instance 'l' of component 'LUT_mul2' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:41]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:6' bound to instance 'lu30' of component 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:48]
+INFO: [Synth 8-638] synthesizing module 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:12]
+INFO: [Synth 8-226] default block is never used [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'LUT_mul3' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:12]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:6' bound to instance 'lu31' of component 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:52]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:6' bound to instance 'lu32' of component 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:56]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:6' bound to instance 'lu33' of component 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:60]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:6' bound to instance 'lu30' of component 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:48]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:6' bound to instance 'lu31' of component 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:52]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:6' bound to instance 'lu32' of component 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:56]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:6' bound to instance 'lu33' of component 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:60]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:6' bound to instance 'lu30' of component 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:48]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:6' bound to instance 'lu31' of component 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:52]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:6' bound to instance 'lu32' of component 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:56]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:6' bound to instance 'lu33' of component 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:60]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:6' bound to instance 'lu30' of component 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:48]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:6' bound to instance 'lu31' of component 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:52]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:6' bound to instance 'lu32' of component 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:56]
+INFO: [Synth 8-3491] module 'LUT_mul3' declared at 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd:6' bound to instance 'lu33' of component 'LUT_mul3' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:60]
+WARNING: [Synth 8-614] signal 'input' is read in the process but is not in the sensitivity list [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:67]
+WARNING: [Synth 8-614] signal 'complete' is read in the process but is not in the sensitivity list [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:67]
+WARNING: [Synth 8-614] signal 'data' is read in the process but is not in the sensitivity list [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:90]
+INFO: [Synth 8-256] done synthesizing module 'MixColumns' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:15]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1012.551 ; gain = 503.266
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1022.910 ; gain = 506.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1012.551 ; gain = 503.266
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1022.910 ; gain = 506.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1022.910 ; gain = 506.633
+---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1012.551 ; gain = 503.266
+WARNING: [Synth 8-327] inferring latch for variable 'output_reg' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd:93]
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'data_reg[4]' [D:/vivadoproj/AES_encryption/AES_encryption.srcs/sources_1/new/ShiftRowns.vhd:29]
-WARNING: [Synth 8-327] inferring latch for variable 'data_reg[3]' [D:/vivadoproj/AES_encryption/AES_encryption.srcs/sources_1/new/ShiftRowns.vhd:29]
-WARNING: [Synth 8-327] inferring latch for variable 'data_reg[2]' [D:/vivadoproj/AES_encryption/AES_encryption.srcs/sources_1/new/ShiftRowns.vhd:29]
-WARNING: [Synth 8-327] inferring latch for variable 'data_reg[1]' [D:/vivadoproj/AES_encryption/AES_encryption.srcs/sources_1/new/ShiftRowns.vhd:29]
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1012.551 ; gain = 503.266
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1022.910 ; gain = 506.633
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
++---XORs : 
+	   4 Input      8 Bit         XORs := 16    
 +---Registers : 
-	                8 Bit    Registers := 12    
+	                8 Bit    Registers := 16    
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input    8 Bit        Muxes := 24    
+	   2 Input    8 Bit        Muxes := 32    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -78,20 +121,67 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1196.484 ; gain = 687.199
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1216.254 ; gain = 699.977
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+----------------------+---------------+----------------+
+|Module Name | RTL Object           | Depth x Width | Implemented As | 
++------------+----------------------+---------------+----------------+
+|LUT_mul2    | byte_out             | 256x8         | LUT            | 
+|LUT_mul3    | byte_out             | 256x8         | LUT            | 
+|MixColumns  | lu2[0].l/byte_out    | 256x8         | LUT            | 
+|MixColumns  | lu2[1].l/byte_out    | 256x8         | LUT            | 
+|MixColumns  | lu2[2].l/byte_out    | 256x8         | LUT            | 
+|MixColumns  | lu2[3].l/byte_out    | 256x8         | LUT            | 
+|MixColumns  | lu2[4].l/byte_out    | 256x8         | LUT            | 
+|MixColumns  | lu2[5].l/byte_out    | 256x8         | LUT            | 
+|MixColumns  | lu2[6].l/byte_out    | 256x8         | LUT            | 
+|MixColumns  | lu2[7].l/byte_out    | 256x8         | LUT            | 
+|MixColumns  | lu2[8].l/byte_out    | 256x8         | LUT            | 
+|MixColumns  | lu2[9].l/byte_out    | 256x8         | LUT            | 
+|MixColumns  | lu2[10].l/byte_out   | 256x8         | LUT            | 
+|MixColumns  | lu2[11].l/byte_out   | 256x8         | LUT            | 
+|MixColumns  | lu2[12].l/byte_out   | 256x8         | LUT            | 
+|MixColumns  | lu2[13].l/byte_out   | 256x8         | LUT            | 
+|MixColumns  | lu2[14].l/byte_out   | 256x8         | LUT            | 
+|MixColumns  | lu2[15].l/byte_out   | 256x8         | LUT            | 
+|MixColumns  | lu3[0].lu30/byte_out | 256x8         | LUT            | 
+|MixColumns  | lu3[0].lu31/byte_out | 256x8         | LUT            | 
+|MixColumns  | lu3[0].lu32/byte_out | 256x8         | LUT            | 
+|MixColumns  | lu3[0].lu33/byte_out | 256x8         | LUT            | 
+|MixColumns  | lu3[1].lu30/byte_out | 256x8         | LUT            | 
+|MixColumns  | lu3[1].lu31/byte_out | 256x8         | LUT            | 
+|MixColumns  | lu3[1].lu32/byte_out | 256x8         | LUT            | 
+|MixColumns  | lu3[1].lu33/byte_out | 256x8         | LUT            | 
+|MixColumns  | lu3[2].lu30/byte_out | 256x8         | LUT            | 
+|MixColumns  | lu3[2].lu31/byte_out | 256x8         | LUT            | 
+|MixColumns  | lu3[2].lu32/byte_out | 256x8         | LUT            | 
+|MixColumns  | lu3[2].lu33/byte_out | 256x8         | LUT            | 
+|MixColumns  | lu3[3].lu30/byte_out | 256x8         | LUT            | 
+|MixColumns  | lu3[3].lu31/byte_out | 256x8         | LUT            | 
+|MixColumns  | lu3[3].lu32/byte_out | 256x8         | LUT            | 
+|MixColumns  | lu3[3].lu33/byte_out | 256x8         | LUT            | 
++------------+----------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1197.258 ; gain = 687.973
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1221.039 ; gain = 704.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1197.258 ; gain = 687.973
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1221.039 ; gain = 704.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -109,37 +199,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:50 . Memory (MB): peak = 1197.258 ; gain = 687.973
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1221.039 ; gain = 704.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:50 . Memory (MB): peak = 1197.258 ; gain = 687.973
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1221.039 ; gain = 704.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:50 . Memory (MB): peak = 1197.258 ; gain = 687.973
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1221.039 ; gain = 704.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:50 . Memory (MB): peak = 1197.258 ; gain = 687.973
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1221.039 ; gain = 704.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:51 . Memory (MB): peak = 1197.258 ; gain = 687.973
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1221.039 ; gain = 704.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:51 . Memory (MB): peak = 1197.258 ; gain = 687.973
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1221.039 ; gain = 704.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -156,45 +246,55 @@ Report Cell Usage:
 |      |Cell |Count |
 +------+-----+------+
 |1     |BUFG |     2|
-|2     |LUT2 |   192|
-|3     |LUT3 |    96|
-|4     |FDCE |    97|
-|5     |FDPE |    96|
-|6     |LD   |    32|
-|7     |LDC  |    96|
-|8     |IBUF |   130|
-|9     |OBUF |   129|
+|2     |LUT1 |     2|
+|3     |LUT2 |   256|
+|4     |LUT3 |   256|
+|5     |LUT5 |    64|
+|6     |LUT6 |   112|
+|7     |FDCE |   129|
+|8     |FDPE |   128|
+|9     |LDC  |   256|
+|10    |IBUF |   130|
+|11    |OBUF |   129|
 +------+-----+------+
 
 Report Instance Areas: 
-+------+---------+-------+------+
-|      |Instance |Module |Cells |
-+------+---------+-------+------+
-|1     |top      |       |   870|
-+------+---------+-------+------+
++------+--------------+-----------+------+
+|      |Instance      |Module     |Cells |
++------+--------------+-----------+------+
+|1     |top           |           |  1464|
+|2     |  \lu2[0].l   |LUT_mul2   |     6|
+|3     |  \lu2[10].l  |LUT_mul2_0 |     8|
+|4     |  \lu2[11].l  |LUT_mul2_1 |     8|
+|5     |  \lu2[1].l   |LUT_mul2_2 |     6|
+|6     |  \lu2[2].l   |LUT_mul2_3 |     6|
+|7     |  \lu2[3].l   |LUT_mul2_4 |     6|
+|8     |  \lu2[8].l   |LUT_mul2_5 |     8|
+|9     |  \lu2[9].l   |LUT_mul2_6 |     8|
++------+--------------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:51 . Memory (MB): peak = 1197.258 ; gain = 687.973
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1221.039 ; gain = 704.762
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:51 . Memory (MB): peak = 1197.258 ; gain = 687.973
-Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:51 . Memory (MB): peak = 1197.258 ; gain = 687.973
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1221.039 ; gain = 704.762
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1221.039 ; gain = 704.762
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1210.332 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 128 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1234.086 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 256 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'MixColumns' is not ideal for floorplanning, since the cellview 'MixColumns' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1309.320 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1316.641 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 128 instances were transformed.
-  LD => LDCE: 32 instances
-  LDC => LDCE: 96 instances
+  A total of 256 instances were transformed.
+  LDC => LDCE: 256 instances
 
-Synth Design complete | Checksum: 168146e7
+Synth Design complete | Checksum: 4fc398c4
 INFO: [Common 17-83] Releasing license: Synthesis
-14 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+56 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:55 . Memory (MB): peak = 1309.320 ; gain = 824.914
-INFO: [Common 17-1381] The checkpoint 'D:/vivadoproj/AES_encryption/AES_encryption.runs/synth_1/ShiftRowns.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file ShiftRowns_utilization_synth.rpt -pb ShiftRowns_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Nov 26 22:38:04 2023...
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1316.641 ; gain = 806.957
+INFO: [Common 17-1381] The checkpoint 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/MixColumns.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file MixColumns_utilization_synth.rpt -pb MixColumns_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Dec  1 20:11:32 2023...

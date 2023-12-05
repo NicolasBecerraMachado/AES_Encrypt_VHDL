@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/vivadoproj/AES_encryption/AES_encryption.runs/synth_1'
+HD_PWD='D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log ShiftRowns.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ShiftRowns.tcl
+EAStep vivado -log MixColumns.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MixColumns.tcl

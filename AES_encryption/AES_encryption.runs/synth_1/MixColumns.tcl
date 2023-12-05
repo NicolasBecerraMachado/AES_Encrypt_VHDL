@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/vivadoproj/AES_encryption/AES_encryption.runs/synth_1/ShiftRowns.tcl"
+  variable script "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/MixColumns.tcl"
   variable category "vivado_synth"
 }
 
@@ -76,16 +76,20 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir D:/vivadoproj/AES_encryption/AES_encryption.cache/wt [current_project]
-set_property parent.project_path D:/vivadoproj/AES_encryption/AES_encryption.xpr [current_project]
+set_property webtalk.parent_dir D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.cache/wt [current_project]
+set_property parent.project_path D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
-set_property ip_output_repo d:/vivadoproj/AES_encryption/AES_encryption.cache/ip [current_project]
+set_property ip_output_repo d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_vhdl -library xil_defaultlib D:/vivadoproj/AES_encryption/AES_encryption.srcs/sources_1/new/ShiftRowns.vhd
+read_vhdl -library xil_defaultlib {
+  D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd
+  D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd
+  D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd
+}
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -96,10 +100,12 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/utils_1/imports/synth_1/ShiftRowns.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top ShiftRowns -part xc7a35tcpg236-1
+synth_design -top MixColumns -part xc7a35tcpg236-1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
@@ -109,10 +115,10 @@ if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef ShiftRowns.dcp
+write_checkpoint -force -noxdef MixColumns.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file ShiftRowns_utilization_synth.rpt -pb ShiftRowns_utilization_synth.pb"
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file MixColumns_utilization_synth.rpt -pb MixColumns_utilization_synth.pb"
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

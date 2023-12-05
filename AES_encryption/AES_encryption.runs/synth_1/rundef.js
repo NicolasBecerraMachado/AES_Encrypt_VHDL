@@ -24,7 +24,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log ShiftRowns.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ShiftRowns.tcl" );
+         "-log MixColumns.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MixColumns.tcl" );
 
 
 

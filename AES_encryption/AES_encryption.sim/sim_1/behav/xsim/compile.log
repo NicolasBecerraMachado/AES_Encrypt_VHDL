@@ -1,4 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/ShiftRowns.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'ShiftRowns'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sim_1/new/tst_shiftRows.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'tst_shiftRows'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sim_1/new/tst_MixColumns.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tst_MixColumns'

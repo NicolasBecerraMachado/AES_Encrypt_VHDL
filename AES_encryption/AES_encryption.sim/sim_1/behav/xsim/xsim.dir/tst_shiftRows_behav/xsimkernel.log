@@ -2,3 +2,6 @@ Running: xsim.dir/tst_shiftRows_behav/xsimk.exe -simmode gui -wdb tst_shiftRows_
 Design successfully loaded
 Design Loading Memory Usage: 7864 KB (Peak: 7864 KB)
 Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 8348 KB (Peak: 8348 KB)
+Simulation CPU Usage: 31 ms
