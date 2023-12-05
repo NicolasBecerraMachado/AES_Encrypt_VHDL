@@ -32,8 +32,12 @@ mCol : MixColumns port map(input => input, clk => clk, rst => rst, done => done,
 process
 begin
 rst <= '1';
+--inputs from "https://www.cryptool.org/en/cto/aes-step-by-step"
 --input <= x"637b76757b767563c0d27cc5d27cc5c0";
-input <= x"5450615d50775d907768900768540761";
+--input <= x"5450615d50775d907768900768540761";
+input <= x"0977d638e92ed1aeefb1d3b3d4689a4f";
+--input <= x"09e9efd4772eb168d6d1d39a38aeb34f";
+
 wait for 20 ns;
 rst <= '0';
 wait for 60 ns;

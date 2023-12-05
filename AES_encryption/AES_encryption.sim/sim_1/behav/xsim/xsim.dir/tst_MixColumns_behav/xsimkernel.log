@@ -1,7 +1,7 @@
-Running: xsim.dir/tst_MixColumns_behav/xsimk.exe -simmode gui -wdb tst_MixColumns_behav.wdb -simrunnum 0 -socket 4990
+Running: xsim.dir/tst_MixColumns_behav/xsimk.exe -simmode gui -wdb tst_MixColumns_behav.wdb -simrunnum 0 -socket 23701
 Design successfully loaded
-Design Loading Memory Usage: 7180 KB (Peak: 7180 KB)
+Design Loading Memory Usage: 7224 KB (Peak: 7224 KB)
 Design Loading CPU Usage: 31 ms
 Simulation completed
-Simulation Memory Usage: 7728 KB (Peak: 7728 KB)
-Simulation CPU Usage: 31 ms
+Simulation Memory Usage: 7776 KB (Peak: 7776 KB)
+Simulation CPU Usage: 77 ms
