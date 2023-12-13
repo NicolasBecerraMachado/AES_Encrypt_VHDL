@@ -41,6 +41,11 @@ input <= x"0977d638e92ed1aeefb1d3b3d4689a4f";
 wait for 20 ns;
 rst <= '0';
 wait for 60 ns;
+rst <= '1';
+input <= x"09287F476F746ABF2C4A6204DA08E3EE";
+wait for 20 ns;
+rst <= '0';
+wait for 60 ns;
 end process;
 
 end Behavioral;
