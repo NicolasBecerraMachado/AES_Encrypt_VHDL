@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1702478997" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ShiftRowns.dcp">
-  <File Type="PA-TCL" Name="inputs.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="inputs_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="inputs_reports.tcl"/>
-  <File Type="RDS-RDS" Name="inputs.vds"/>
-  <File Type="RDS-UTIL" Name="inputs_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="inputs_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="inputs.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="inputs_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="inputs_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1702483441" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ShiftRowns.dcp">
+  <File Type="PA-TCL" Name="StateMachine_AES.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="StateMachine_AES_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="StateMachine_AES_reports.tcl"/>
+  <File Type="RDS-RDS" Name="StateMachine_AES.vds"/>
+  <File Type="RDS-UTIL" Name="StateMachine_AES_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="StateMachine_AES_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="StateMachine_AES.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="StateMachine_AES_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="StateMachine_AES_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/inputs.vhd">
+    <File Path="$PSRCDIR/sources_1/new/StateMachine_Wiring.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/Display_Manager.vhd">
+    <File Path="$PSRCDIR/sources_1/new/inputs.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/StateMachine_Wiring.vhd">
+    <File Path="$PSRCDIR/sources_1/new/Display_Manager.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -83,7 +83,10 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="inputs"/>
+      <Option Name="TopModule" Val="StateMachine_AES"/>
+      <Option Name="TopLib" Val="xil_defaultlib"/>
+      <Option Name="TopArchitecture" Val="Behavioral"/>
+      <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/new/StateMachine_Wiring.vhd"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">

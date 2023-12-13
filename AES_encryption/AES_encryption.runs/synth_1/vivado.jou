@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Wed Dec 13 15:50:01 2023
-# Process ID: 4788
+# Start of session at: Wed Dec 13 17:04:08 2023
+# Process ID: 16388
 # Current directory: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1
-# Command line: vivado.exe -log inputs.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source inputs.tcl
-# Log file: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/inputs.vds
+# Command line: vivado.exe -log StateMachine_AES.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source StateMachine_AES.tcl
+# Log file: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/StateMachine_AES.vds
 # Journal file: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1\vivado.jou
 # Running On: LAPTOP-LCTKS4O4, OS: Windows, CPU Frequency: 3294 MHz, CPU Physical cores: 12, Host memory: 16487 MB
 #-----------------------------------------------------------
-source inputs.tcl -notrace
+source StateMachine_AES.tcl -notrace

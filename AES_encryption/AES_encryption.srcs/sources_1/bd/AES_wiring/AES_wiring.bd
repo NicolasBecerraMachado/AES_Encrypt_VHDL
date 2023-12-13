@@ -12,8 +12,10 @@
     "design_tree": {
       "MixColumns_0": "",
       "ShiftRowns_0": "",
+      "Display_Manager_0": "",
       "StateMachine_AES_0": "",
-      "Display_Manager_0": ""
+      "inputs_0": "",
+      "mux_0": ""
     },
     "ports": {
       "sys_clock": {
@@ -38,6 +40,12 @@
         "direction": "O",
         "left": "2",
         "right": "0"
+      },
+      "SelInput": {
+        "type": "data",
+        "direction": "I",
+        "left": "0",
+        "right": "3"
       }
     },
     "components": {
@@ -121,41 +129,6 @@
           }
         }
       },
-      "StateMachine_AES_0": {
-        "vlnv": "xilinx.com:module_ref:StateMachine_AES:1.0",
-        "xci_name": "AES_wiring_StateMachine_AES_0_0",
-        "xci_path": "ip\\AES_wiring_StateMachine_AES_0_0\\AES_wiring_StateMachine_AES_0_0.xci",
-        "inst_hier_path": "StateMachine_AES_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "StateMachine_AES",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "done": {
-            "direction": "O"
-          },
-          "rstO": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          }
-        }
-      },
       "Display_Manager_0": {
         "vlnv": "xilinx.com:module_ref:Display_Manager:1.0",
         "xci_name": "AES_wiring_Display_Manager_0_0",
@@ -193,6 +166,103 @@
             "right": "0"
           }
         }
+      },
+      "StateMachine_AES_0": {
+        "vlnv": "xilinx.com:module_ref:StateMachine_AES:1.0",
+        "xci_name": "AES_wiring_StateMachine_AES_0_0",
+        "xci_path": "ip\\AES_wiring_StateMachine_AES_0_0\\AES_wiring_StateMachine_AES_0_0.xci",
+        "inst_hier_path": "StateMachine_AES_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "StateMachine_AES",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "done": {
+            "direction": "O"
+          },
+          "muxIn": {
+            "direction": "O"
+          },
+          "rstO": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "inputs_0": {
+        "vlnv": "xilinx.com:module_ref:inputs:1.0",
+        "xci_name": "AES_wiring_inputs_0_0",
+        "xci_path": "ip\\AES_wiring_inputs_0_0\\AES_wiring_inputs_0_0.xci",
+        "inst_hier_path": "inputs_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "inputs",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "sel": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "currIn": {
+            "direction": "O",
+            "left": "127",
+            "right": "0"
+          }
+        }
+      },
+      "mux_0": {
+        "vlnv": "xilinx.com:module_ref:mux:1.0",
+        "xci_name": "AES_wiring_mux_0_0",
+        "xci_path": "ip\\AES_wiring_mux_0_0\\AES_wiring_mux_0_0.xci",
+        "inst_hier_path": "mux_0",
+        "parameters": {
+          "N": {
+            "value": "7"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "mux",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "in1": {
+            "direction": "I",
+            "left": "127",
+            "right": "0"
+          },
+          "in2": {
+            "direction": "I",
+            "left": "127",
+            "right": "0"
+          },
+          "sel": {
+            "direction": "I"
+          },
+          "outM": {
+            "direction": "O",
+            "left": "127",
+            "right": "0"
+          }
+        }
       }
     },
     "nets": {
@@ -208,10 +278,28 @@
           "sel_0"
         ]
       },
+      "SelInput_1": {
+        "ports": [
+          "SelInput",
+          "inputs_0/sel"
+        ]
+      },
       "ShiftRowns_0_output": {
         "ports": [
           "ShiftRowns_0/output",
           "MixColumns_0/input"
+        ]
+      },
+      "StateMachine_AES_0_muxIn": {
+        "ports": [
+          "StateMachine_AES_0/muxIn",
+          "mux_0/sel"
+        ]
+      },
+      "inputs_0_currIn": {
+        "ports": [
+          "inputs_0/currIn",
+          "mux_0/in1"
         ]
       }
     }

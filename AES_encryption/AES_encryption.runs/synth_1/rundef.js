@@ -24,7 +24,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log inputs.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source inputs.tcl" );
+         "-log StateMachine_AES.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source StateMachine_AES.tcl" );
 
 
 
