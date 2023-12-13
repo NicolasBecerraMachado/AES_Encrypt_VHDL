@@ -5,6 +5,7 @@ entity StateMachine_AES is port(
     clk : in std_logic;
     rst : in std_logic;
     done : out std_logic; --use to siplay AES or not
+    muxIn : out std_logic;
     --sel : in std_logic_vector(2 downto 0);
     rstO : out std_logic_vector(3 downto 0)
 );
@@ -24,6 +25,7 @@ begin
         if rst <= '1' then
             state <= "000";
             next_state <= "001";
+            muxIn <= '1';
         else
             next_state <= state;
             if state = "100" then
@@ -52,6 +54,7 @@ case state is
         if rising_edge(notClk) then
             rstO <= "0100"; --make MC read
         end if;
+        muxIn <= '0';--change mux of ARK
     when "011" => --MC
         next_state <= "100";
         if rising_edge(notClk) then

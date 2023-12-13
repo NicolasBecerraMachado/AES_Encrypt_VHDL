@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Display_Manager.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Display_Manager.tcl
+EAStep vivado -log inputs.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source inputs.tcl

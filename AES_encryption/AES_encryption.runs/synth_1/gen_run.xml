@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1702317967" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ShiftRowns.dcp">
-  <File Type="PA-TCL" Name="Display_Manager.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="Display_Manager_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="Display_Manager_reports.tcl"/>
-  <File Type="RDS-RDS" Name="Display_Manager.vds"/>
-  <File Type="RDS-UTIL" Name="Display_Manager_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="Display_Manager_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="Display_Manager.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Display_Manager_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Display_Manager_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1702478997" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ShiftRowns.dcp">
+  <File Type="PA-TCL" Name="inputs.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="inputs_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="inputs_reports.tcl"/>
+  <File Type="RDS-RDS" Name="inputs.vds"/>
+  <File Type="RDS-UTIL" Name="inputs_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="inputs_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="inputs.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="inputs_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="inputs_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/inputs.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/Display_Manager.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -59,9 +66,24 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/bd/AES_wiring/AES_wiring.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/TOP_LEVEL.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Display_Manager"/>
+      <Option Name="TopModule" Val="inputs"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
