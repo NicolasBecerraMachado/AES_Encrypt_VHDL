@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log SubBytes.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SubBytes.tcl
+EAStep vivado -log AddRoundKey.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source AddRoundKey.tcl

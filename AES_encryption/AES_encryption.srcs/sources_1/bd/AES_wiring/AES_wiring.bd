@@ -15,21 +15,13 @@
       "inputs_0": "",
       "mux_0": "",
       "StateMachine_AES_0": "",
-      "ShiftRowns_0": ""
+      "ShiftRowns_0": "",
+      "SubBytes_0": "",
+      "SevenSegCA_0": "",
+      "SevenSegCA_1": "",
+      "xlconcat_0": ""
     },
     "ports": {
-      "sys_clock": {
-        "type": "clk",
-        "direction": "I",
-        "parameters": {
-          "FREQ_HZ": {
-            "value": "100000000"
-          },
-          "PHASE": {
-            "value": "0.0"
-          }
-        }
-      },
       "SEG": {
         "type": "data",
         "direction": "O",
@@ -46,6 +38,21 @@
         "direction": "I",
         "left": "0",
         "right": "3"
+      },
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "4000000"
+          }
+        }
+      },
+      "rst": {
+        "direction": "I"
+      },
+      "Show": {
+        "direction": "I"
       }
     },
     "components": {
@@ -263,6 +270,89 @@
             "direction": "O"
           }
         }
+      },
+      "SubBytes_0": {
+        "vlnv": "xilinx.com:module_ref:SubBytes:1.0",
+        "xci_name": "AES_wiring_SubBytes_0_0",
+        "xci_path": "ip\\AES_wiring_SubBytes_0_0\\AES_wiring_SubBytes_0_0.xci",
+        "inst_hier_path": "SubBytes_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SubBytes",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Input": {
+            "direction": "I",
+            "left": "127",
+            "right": "0"
+          },
+          "Output": {
+            "direction": "O",
+            "left": "127",
+            "right": "0"
+          }
+        }
+      },
+      "SevenSegCA_0": {
+        "vlnv": "xilinx.com:module_ref:SevenSegCA:1.0",
+        "xci_name": "AES_wiring_SevenSegCA_0_0",
+        "xci_path": "ip\\AES_wiring_SevenSegCA_0_0\\AES_wiring_SevenSegCA_0_0.xci",
+        "inst_hier_path": "SevenSegCA_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SevenSegCA",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Input": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "Output": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      },
+      "SevenSegCA_1": {
+        "vlnv": "xilinx.com:module_ref:SevenSegCA:1.0",
+        "xci_name": "AES_wiring_SevenSegCA_1_0",
+        "xci_path": "ip\\AES_wiring_SevenSegCA_1_0\\AES_wiring_SevenSegCA_1_0.xci",
+        "inst_hier_path": "SevenSegCA_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SevenSegCA",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Input": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "Output": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      },
+      "xlconcat_0": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "AES_wiring_xlconcat_0_0",
+        "xci_path": "ip\\AES_wiring_xlconcat_0_0\\AES_wiring_xlconcat_0_0.xci",
+        "inst_hier_path": "xlconcat_0",
+        "parameters": {
+          "IN0_WIDTH": {
+            "value": "7"
+          },
+          "IN1_WIDTH": {
+            "value": "7"
+          }
+        }
       }
     },
     "nets": {
@@ -284,10 +374,34 @@
           "inputs_0/sel"
         ]
       },
+      "SevenSegCA_0_Output": {
+        "ports": [
+          "SevenSegCA_0/Output",
+          "xlconcat_0/In0"
+        ]
+      },
+      "SevenSegCA_1_Output": {
+        "ports": [
+          "SevenSegCA_1/Output",
+          "xlconcat_0/In1"
+        ]
+      },
       "ShiftRowns_0_output": {
         "ports": [
           "ShiftRowns_0/output",
           "MixColumns_0/input"
+        ]
+      },
+      "Show_1": {
+        "ports": [
+          "Show",
+          "Display_Manager_0/show"
+        ]
+      },
+      "StateMachine_AES_0_done": {
+        "ports": [
+          "StateMachine_AES_0/done",
+          "Display_Manager_0/ready"
         ]
       },
       "StateMachine_AES_0_muxIn": {
@@ -296,10 +410,37 @@
           "mux_0/sel"
         ]
       },
+      "SubBytes_0_Output": {
+        "ports": [
+          "SubBytes_0/Output",
+          "ShiftRowns_0/input"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
+          "Display_Manager_0/clk",
+          "MixColumns_0/clk",
+          "ShiftRowns_0/clk",
+          "StateMachine_AES_0/clk"
+        ]
+      },
       "inputs_0_currIn": {
         "ports": [
           "inputs_0/currIn",
           "mux_0/in1"
+        ]
+      },
+      "rst_1": {
+        "ports": [
+          "rst",
+          "StateMachine_AES_0/rst"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "xlconcat_0/dout",
+          "Display_Manager_0/Cresult"
         ]
       }
     }

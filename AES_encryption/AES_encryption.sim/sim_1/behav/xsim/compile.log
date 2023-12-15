@@ -1,6 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/S_box.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'S_box'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/SubBytes.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'SubBytes'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sim_1/new/tb_SubBytes.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'tb_SubBytes'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sim_1/new/tb_ARK.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_ARK'
