@@ -11,11 +11,11 @@
     },
     "design_tree": {
       "MixColumns_0": "",
-      "ShiftRowns_0": "",
       "Display_Manager_0": "",
-      "StateMachine_AES_0": "",
       "inputs_0": "",
-      "mux_0": ""
+      "mux_0": "",
+      "StateMachine_AES_0": "",
+      "ShiftRowns_0": ""
     },
     "ports": {
       "sys_clock": {
@@ -89,46 +89,6 @@
           }
         }
       },
-      "ShiftRowns_0": {
-        "vlnv": "xilinx.com:module_ref:ShiftRowns:1.0",
-        "xci_name": "AES_wiring_ShiftRowns_0_0",
-        "xci_path": "ip\\AES_wiring_ShiftRowns_0_0\\AES_wiring_ShiftRowns_0_0.xci",
-        "inst_hier_path": "ShiftRowns_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "ShiftRowns",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "input": {
-            "direction": "I",
-            "left": "127",
-            "right": "0"
-          },
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "output": {
-            "direction": "O",
-            "left": "127",
-            "right": "0"
-          },
-          "done": {
-            "direction": "O"
-          }
-        }
-      },
       "Display_Manager_0": {
         "vlnv": "xilinx.com:module_ref:Display_Manager:1.0",
         "xci_name": "AES_wiring_Display_Manager_0_0",
@@ -163,44 +123,6 @@
           "sel": {
             "direction": "O",
             "left": "2",
-            "right": "0"
-          }
-        }
-      },
-      "StateMachine_AES_0": {
-        "vlnv": "xilinx.com:module_ref:StateMachine_AES:1.0",
-        "xci_name": "AES_wiring_StateMachine_AES_0_0",
-        "xci_path": "ip\\AES_wiring_StateMachine_AES_0_0\\AES_wiring_StateMachine_AES_0_0.xci",
-        "inst_hier_path": "StateMachine_AES_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "StateMachine_AES",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "done": {
-            "direction": "O"
-          },
-          "muxIn": {
-            "direction": "O"
-          },
-          "rstO": {
-            "direction": "O",
-            "left": "3",
             "right": "0"
           }
         }
@@ -261,6 +183,84 @@
             "direction": "O",
             "left": "127",
             "right": "0"
+          }
+        }
+      },
+      "StateMachine_AES_0": {
+        "vlnv": "xilinx.com:module_ref:StateMachine_AES:1.0",
+        "xci_name": "AES_wiring_StateMachine_AES_0_0",
+        "xci_path": "ip\\AES_wiring_StateMachine_AES_0_0\\AES_wiring_StateMachine_AES_0_0.xci",
+        "inst_hier_path": "StateMachine_AES_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "StateMachine_AES",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "done": {
+            "direction": "O"
+          },
+          "muxIn": {
+            "direction": "O"
+          },
+          "rstO": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "ShiftRowns_0": {
+        "vlnv": "xilinx.com:module_ref:ShiftRowns:1.0",
+        "xci_name": "AES_wiring_ShiftRowns_0_0",
+        "xci_path": "ip\\AES_wiring_ShiftRowns_0_0\\AES_wiring_ShiftRowns_0_0.xci",
+        "inst_hier_path": "ShiftRowns_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ShiftRowns",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "input": {
+            "direction": "I",
+            "left": "127",
+            "right": "0"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "output": {
+            "direction": "O",
+            "left": "127",
+            "right": "0"
+          },
+          "done": {
+            "direction": "O"
           }
         }
       }

@@ -1,7 +1,7 @@
 Vivado Simulator v2023.1
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/AMDSOFT/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tst_MixColumns_behav xil_defaultlib.tst_MixColumns -log elaborate.log 
+Running: D:/AMDSOFT/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot tb_SubBytes_behav xil_defaultlib.tb_SubBytes -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -11,8 +11,8 @@ Time Resolution for simulation is 1ps
 Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
-Compiling architecture behavioral of entity xil_defaultlib.LUT_mul2 [lut_mul2_default]
-Compiling architecture behavioral of entity xil_defaultlib.LUT_mul3 [lut_mul3_default]
-Compiling architecture behavioral of entity xil_defaultlib.MixColumns [mixcolumns_default]
-Compiling architecture behavioral of entity xil_defaultlib.tst_mixcolumns
-Built simulation snapshot tst_MixColumns_behav
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.S_box [s_box_default]
+Compiling architecture behavioral of entity xil_defaultlib.SubBytes [subbytes_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_subbytes
+Built simulation snapshot tb_SubBytes_behav

@@ -22,13 +22,15 @@ signal data : data_block;
 begin
 
 -- select and swap
-process(clk)
+process(clk,rst)
 begin
     if rst = '1' then
-        for i in 1 to 16 loop
-            data(i) <= input(i*N-1 downto (i-1)*N);
-        end loop;
-        done <= '0';
+        if rising_edge(clk) then
+            for i in 1 to 16 loop
+                data(i) <= input(i*N-1 downto (i-1)*N);
+            end loop;
+            done <= '0';
+    end if;
     else
         if rising_edge(clk) then
             for i in 1 to 3 loop

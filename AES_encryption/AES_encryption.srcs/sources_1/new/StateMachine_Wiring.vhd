@@ -25,7 +25,6 @@ begin
         if rst <= '1' then
             state <= "000";
             next_state <= "001";
-            muxIn <= '1';
         else
             next_state <= state;
             if state = "100" then
@@ -44,6 +43,7 @@ case state is
             rstO <= "0001"; -- make SB read
         end if;
         done <= '0';
+        muxIn <= '1';
     when "001" => -- subBytes
         next_state <= "010";
         if rising_edge(notClk) then

@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" -L "xpm" --snapshot "tb_SubBytes_behav" "xil_defaultlib.tb_SubBytes" -log "elaborate.log" 

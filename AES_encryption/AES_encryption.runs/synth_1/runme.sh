@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log StateMachine_AES.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source StateMachine_AES.tcl
+EAStep vivado -log SubBytes.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SubBytes.tcl
