@@ -2,8 +2,8 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity SevenSegCA is port(
-    Input  : in std_logic_vector(7 downto 0);
-    Output : out std_logic_vector(6 downto 0));
+    INPUT  : in std_logic_vector(3 downto 0);
+    OUTPUT : out std_logic_vector(6 downto 0));
 end SevenSegCA;
 
 architecture Behavioral of SevenSegCA is

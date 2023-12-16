@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log AddRoundKey.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source AddRoundKey.tcl
+    with args -log AES_wiring_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source AES_wiring_wrapper.tcl
 
 
 ECHO is off.
@@ -13,74 +13,365 @@ ECHO is off.
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
-source AddRoundKey.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 484.418 ; gain = 198.926
+source AES_wiring_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 483.402 ; gain = 199.262
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/AMDSOFT/Vivado/2023.1/data/ip'.
+add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:15 . Memory (MB): peak = 515.492 ; gain = 32.090
 Command: read_checkpoint -auto_incremental -incremental D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/utils_1/imports/synth_1/ShiftRowns.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/utils_1/imports/synth_1/ShiftRowns.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
-Command: synth_design -top AddRoundKey -part xc7a35tcpg236-1
+Command: synth_design -top AES_wiring_wrapper -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 20960
+INFO: [Synth 8-7075] Helper process launched with PID 11668
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 923.512 ; gain = 407.691
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1314.207 ; gain = 410.926
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'AddRoundKey' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/AddRoundKeys.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'AddRoundKey' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/AddRoundKeys.vhd:17]
-WARNING: [Synth 8-7129] Port clk in module AddRoundKey is either unconnected or has no load
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_wrapper' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/hdl/AES_wiring_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/synth/AES_wiring.v:13]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_AddRoundKey_0_0' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_AddRoundKey_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_AddRoundKey_0_0' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_AddRoundKey_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_Display_Manager_0_0' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_Display_Manager_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_Display_Manager_0_0' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_Display_Manager_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_MixColumns_0_0' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_MixColumns_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_MixColumns_0_0' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_MixColumns_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'done' of module 'AES_wiring_MixColumns_0_0' is unconnected for instance 'MixColumns_0' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/synth/AES_wiring.v:100]
+WARNING: [Synth 8-7023] instance 'MixColumns_0' of module 'AES_wiring_MixColumns_0_0' has 5 connections declared, but only 4 given [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/synth/AES_wiring.v:100]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_SevenSegCA_0_0' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_SevenSegCA_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_SevenSegCA_0_0' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_SevenSegCA_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_SevenSegCA_1_0' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_SevenSegCA_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_SevenSegCA_1_0' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_SevenSegCA_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_ShiftRowns_0_0' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_ShiftRowns_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_ShiftRowns_0_0' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_ShiftRowns_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'done' of module 'AES_wiring_ShiftRowns_0_0' is unconnected for instance 'ShiftRowns_0' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/synth/AES_wiring.v:111]
+WARNING: [Synth 8-7023] instance 'ShiftRowns_0' of module 'AES_wiring_ShiftRowns_0_0' has 5 connections declared, but only 4 given [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/synth/AES_wiring.v:111]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_StateMachine_AES_0_0' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_StateMachine_AES_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_StateMachine_AES_0_0' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_StateMachine_AES_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_SubBytes_0_0' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_SubBytes_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_SubBytes_0_0' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_SubBytes_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_inputs_0_0' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_inputs_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_inputs_0_0' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_inputs_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_mux4_0_0' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_mux4_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_mux4_0_0' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_mux4_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_mux_0_0' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_mux_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_mux_0_0' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_mux_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_mux_0_1' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_mux_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_mux_0_1' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/.Xil/Vivado-8496-LAPTOP-LCTKS4O4/realtime/AES_wiring_mux_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlconcat_0_0' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlconcat_0_0/synth/AES_wiring_xlconcat_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_4_xlconcat' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_4_xlconcat' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/4b67/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlconcat_0_0' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlconcat_0_0/synth/AES_wiring_xlconcat_0_0.v:53]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/synth/AES_wiring.v:162]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_0_0' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_0_0/synth/AES_wiring_xlslice_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_0_0' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_0_0/synth/AES_wiring_xlslice_0_0.v:53]
+WARNING: [Synth 8-7071] port 'Dout' of module 'AES_wiring_xlslice_0_0' is unconnected for instance 'xlslice_0' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/synth/AES_wiring.v:162]
+WARNING: [Synth 8-7023] instance 'xlslice_0' of module 'AES_wiring_xlslice_0_0' has 2 connections declared, but only 1 given [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/synth/AES_wiring.v:162]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_0_1' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_0_1/synth/AES_wiring_xlslice_0_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized0' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_0_1' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_0_1/synth/AES_wiring_xlslice_0_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_4_5' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_5/synth/AES_wiring_xlslice_4_5.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized1' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_4_5' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_5/synth/AES_wiring_xlslice_4_5.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_4_6' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_6/synth/AES_wiring_xlslice_4_6.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized2' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_4_6' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_6/synth/AES_wiring_xlslice_4_6.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_4_7' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_7/synth/AES_wiring_xlslice_4_7.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized3' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized3' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_4_7' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_7/synth/AES_wiring_xlslice_4_7.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_4_8' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_8/synth/AES_wiring_xlslice_4_8.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized4' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized4' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_4_8' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_8/synth/AES_wiring_xlslice_4_8.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_4_9' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_9/synth/AES_wiring_xlslice_4_9.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized5' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized5' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_4_9' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_9/synth/AES_wiring_xlslice_4_9.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_4_10' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_10/synth/AES_wiring_xlslice_4_10.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized6' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized6' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_4_10' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_10/synth/AES_wiring_xlslice_4_10.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_4_11' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_11/synth/AES_wiring_xlslice_4_11.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized7' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized7' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_4_11' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_11/synth/AES_wiring_xlslice_4_11.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_4_12' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_12/synth/AES_wiring_xlslice_4_12.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized8' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized8' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_4_12' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_12/synth/AES_wiring_xlslice_4_12.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_4_13' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_13/synth/AES_wiring_xlslice_4_13.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized9' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized9' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_4_13' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_13/synth/AES_wiring_xlslice_4_13.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_4_14' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_14/synth/AES_wiring_xlslice_4_14.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized10' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized10' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_4_14' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_14/synth/AES_wiring_xlslice_4_14.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_1_0' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_1_0/synth/AES_wiring_xlslice_1_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized11' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized11' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_1_0' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_1_0/synth/AES_wiring_xlslice_1_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_18_0' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_18_0/synth/AES_wiring_xlslice_18_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized12' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized12' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_18_0' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_18_0/synth/AES_wiring_xlslice_18_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_20_0' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_20_0/synth/AES_wiring_xlslice_20_0.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_20_0' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_20_0/synth/AES_wiring_xlslice_20_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_2_0' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_2_0/synth/AES_wiring_xlslice_2_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized13' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized13' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_2_0' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_2_0/synth/AES_wiring_xlslice_2_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_0_2' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_0_2/synth/AES_wiring_xlslice_0_2.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized14' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized14' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_0_2' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_0_2/synth/AES_wiring_xlslice_0_2.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_4_0' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_0/synth/AES_wiring_xlslice_4_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized15' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized15' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_4_0' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_0/synth/AES_wiring_xlslice_4_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_4_1' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_1/synth/AES_wiring_xlslice_4_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized16' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized16' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_4_1' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_1/synth/AES_wiring_xlslice_4_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_4_2' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_2/synth/AES_wiring_xlslice_4_2.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized17' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized17' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_4_2' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_2/synth/AES_wiring_xlslice_4_2.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_4_3' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_3/synth/AES_wiring_xlslice_4_3.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized18' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized18' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_4_3' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_3/synth/AES_wiring_xlslice_4_3.v:53]
+INFO: [Synth 8-6157] synthesizing module 'AES_wiring_xlslice_4_4' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_4/synth/AES_wiring_xlslice_4_4.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice__parameterized19' [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice__parameterized19' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ipshared/11d0/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_xlslice_4_4' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_4_4/synth/AES_wiring_xlslice_4_4.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring' (0#1) [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/synth/AES_wiring.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'AES_wiring_wrapper' (0#1) [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/hdl/AES_wiring_wrapper.v:13]
+WARNING: [Synth 8-7129] Port Din[127] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[126] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[125] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[124] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[123] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[122] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[121] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[120] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[119] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[118] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[117] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[116] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[115] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[114] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[113] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[112] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[111] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[110] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[109] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[108] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[107] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[106] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[105] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[104] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[103] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[102] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[101] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[100] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[99] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[98] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[97] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[96] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[95] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[94] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[93] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[92] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[91] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[90] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[89] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[88] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[87] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[86] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[85] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[84] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[83] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[82] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[81] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[80] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[79] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[78] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[77] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[76] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[75] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[74] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[73] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[72] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[71] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[70] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[69] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[68] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[67] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[66] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[65] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[64] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[63] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[62] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[61] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[60] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[59] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[58] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[57] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[56] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[55] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[54] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[53] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[52] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[51] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[50] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[49] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[48] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[39] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[38] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[37] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[36] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[35] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[34] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[33] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[32] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[31] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[30] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[29] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[28] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[27] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[26] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[25] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[24] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[23] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[22] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[21] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Din[20] in module xlslice_v1_0_2_xlslice__parameterized19 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1013.988 ; gain = 498.168
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1407.590 ; gain = 504.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1013.988 ; gain = 498.168
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1407.590 ; gain = 504.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1407.590 ; gain = 504.309
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.084 . Memory (MB): peak = 1407.590 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_Display_Manager_0_0/AES_wiring_Display_Manager_0_0/AES_wiring_Display_Manager_0_0_in_context.xdc] for cell 'AES_wiring_i/Display_Manager_0'
+Finished Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_Display_Manager_0_0/AES_wiring_Display_Manager_0_0/AES_wiring_Display_Manager_0_0_in_context.xdc] for cell 'AES_wiring_i/Display_Manager_0'
+Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_inputs_0_0/AES_wiring_inputs_0_0/AES_wiring_inputs_0_0_in_context.xdc] for cell 'AES_wiring_i/inputs_0'
+Finished Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_inputs_0_0/AES_wiring_inputs_0_0/AES_wiring_inputs_0_0_in_context.xdc] for cell 'AES_wiring_i/inputs_0'
+Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_SubBytes_0_0/AES_wiring_SubBytes_0_0/AES_wiring_SubBytes_0_0_in_context.xdc] for cell 'AES_wiring_i/SubBytes_0'
+Finished Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_SubBytes_0_0/AES_wiring_SubBytes_0_0/AES_wiring_SubBytes_0_0_in_context.xdc] for cell 'AES_wiring_i/SubBytes_0'
+Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_mux_0_1/AES_wiring_mux_0_1/AES_wiring_mux_0_0_in_context.xdc] for cell 'AES_wiring_i/mux_1'
+Finished Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_mux_0_1/AES_wiring_mux_0_1/AES_wiring_mux_0_0_in_context.xdc] for cell 'AES_wiring_i/mux_1'
+Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_StateMachine_AES_0_0/AES_wiring_StateMachine_AES_0_0/AES_wiring_StateMachine_AES_0_0_in_context.xdc] for cell 'AES_wiring_i/StateMachine_AES_0'
+Finished Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_StateMachine_AES_0_0/AES_wiring_StateMachine_AES_0_0/AES_wiring_StateMachine_AES_0_0_in_context.xdc] for cell 'AES_wiring_i/StateMachine_AES_0'
+Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_AddRoundKey_0_0/AES_wiring_AddRoundKey_0_0/AES_wiring_AddRoundKey_0_0_in_context.xdc] for cell 'AES_wiring_i/AddRoundKey_0'
+Finished Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_AddRoundKey_0_0/AES_wiring_AddRoundKey_0_0/AES_wiring_AddRoundKey_0_0_in_context.xdc] for cell 'AES_wiring_i/AddRoundKey_0'
+Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_mux_0_0/AES_wiring_mux_0_0/AES_wiring_mux_0_0_in_context.xdc] for cell 'AES_wiring_i/mux_0'
+Finished Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_mux_0_0/AES_wiring_mux_0_0/AES_wiring_mux_0_0_in_context.xdc] for cell 'AES_wiring_i/mux_0'
+Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_mux4_0_0/AES_wiring_mux4_0_0/AES_wiring_mux4_0_0_in_context.xdc] for cell 'AES_wiring_i/mux4_0'
+Finished Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_mux4_0_0/AES_wiring_mux4_0_0/AES_wiring_mux4_0_0_in_context.xdc] for cell 'AES_wiring_i/mux4_0'
+Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ShiftRowns_0_0/AES_wiring_ShiftRowns_0_0/AES_wiring_ShiftRowns_0_0_in_context.xdc] for cell 'AES_wiring_i/ShiftRowns_0'
+Finished Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ShiftRowns_0_0/AES_wiring_ShiftRowns_0_0/AES_wiring_ShiftRowns_0_0_in_context.xdc] for cell 'AES_wiring_i/ShiftRowns_0'
+Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_SevenSegCA_0_0/AES_wiring_SevenSegCA_0_0/AES_wiring_SevenSegCA_0_0_in_context.xdc] for cell 'AES_wiring_i/SevenSegCA_0'
+Finished Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_SevenSegCA_0_0/AES_wiring_SevenSegCA_0_0/AES_wiring_SevenSegCA_0_0_in_context.xdc] for cell 'AES_wiring_i/SevenSegCA_0'
+Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_SevenSegCA_1_0/AES_wiring_SevenSegCA_1_0/AES_wiring_SevenSegCA_1_0_in_context.xdc] for cell 'AES_wiring_i/SevenSegCA_1'
+Finished Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_SevenSegCA_1_0/AES_wiring_SevenSegCA_1_0/AES_wiring_SevenSegCA_1_0_in_context.xdc] for cell 'AES_wiring_i/SevenSegCA_1'
+Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_MixColumns_0_0/AES_wiring_MixColumns_0_0/AES_wiring_MixColumns_0_0_in_context.xdc] for cell 'AES_wiring_i/MixColumns_0'
+Finished Parsing XDC File [d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_MixColumns_0_0/AES_wiring_MixColumns_0_0/AES_wiring_MixColumns_0_0_in_context.xdc] for cell 'AES_wiring_i/MixColumns_0'
+Parsing XDC File [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1430.438 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1430.438 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1430.438 ; gain = 527.156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1013.988 ; gain = 498.168
----------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7a35tcpg236-1
----------------------------------------------------------------------------------
-Start Preparing Guide Design
----------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-6895] The reference checkpoint D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/utils_1/imports/synth_1/ShiftRowns.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
----------------------------------------------------------------------------------
-Finished Doing Graph Differ : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1013.988 ; gain = 498.168
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1430.438 ; gain = 527.156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Preparing Guide Design : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1013.988 ; gain = 498.168
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/Display_Manager_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/inputs_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/SubBytes_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlconcat_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/mux_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/StateMachine_AES_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/AddRoundKey_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_3. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_4. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_5. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_6. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_7. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_8. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_9. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_10. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_11. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_12. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_13. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_14. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_15. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_16. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_17. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_18. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_19. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/mux_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/mux4_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_20. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/xlslice_21. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/ShiftRowns_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/SevenSegCA_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/SevenSegCA_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for AES_wiring_i/MixColumns_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1430.438 ; gain = 527.156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1013.988 ; gain = 498.168
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1430.438 ; gain = 527.156
 ---------------------------------------------------------------------------------
-
-
-Incremental Synthesis Report Summary:
-
-1. Incremental synthesis run: no
-
-   Reason for not running incremental synthesis : 
-
-
-INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input    4 Bit       Adders := 1     
-+---XORs : 
-	   2 Input    128 Bit         XORs := 1     
-+---Registers : 
-	                4 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input  128 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -93,27 +384,30 @@ BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-7129] Port clk in module AddRoundKey is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1205.719 ; gain = 689.898
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1430.438 ; gain = 527.156
 ---------------------------------------------------------------------------------
-No constraint files found.
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1430.438 ; gain = 527.156
+---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1206.602 ; gain = 690.781
+Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1430.438 ; gain = 527.156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1206.602 ; gain = 690.781
+Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 1430.438 ; gain = 527.156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -131,90 +425,97 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1207.531 ; gain = 691.711
+Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 1430.438 ; gain = 527.156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1207.531 ; gain = 691.711
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 1430.438 ; gain = 527.156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1207.531 ; gain = 691.711
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 1430.438 ; gain = 527.156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1207.531 ; gain = 691.711
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 1430.438 ; gain = 527.156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1207.531 ; gain = 691.711
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 1430.438 ; gain = 527.156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1207.531 ; gain = 691.711
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 1430.438 ; gain = 527.156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
++------+--------------------------------+----------+
+|      |BlackBox name                   |Instances |
++------+--------------------------------+----------+
+|1     |AES_wiring_AddRoundKey_0_0      |         1|
+|2     |AES_wiring_Display_Manager_0_0  |         1|
+|3     |AES_wiring_MixColumns_0_0       |         1|
+|4     |AES_wiring_SevenSegCA_0_0       |         1|
+|5     |AES_wiring_SevenSegCA_1_0       |         1|
+|6     |AES_wiring_ShiftRowns_0_0       |         1|
+|7     |AES_wiring_StateMachine_AES_0_0 |         1|
+|8     |AES_wiring_SubBytes_0_0         |         1|
+|9     |AES_wiring_inputs_0_0           |         1|
+|10    |AES_wiring_mux4_0_0             |         1|
+|11    |AES_wiring_mux_0_0              |         1|
+|12    |AES_wiring_mux_0_1              |         1|
++------+--------------------------------+----------+
 
 Report Cell Usage: 
-+------+-----+------+
-|      |Cell |Count |
-+------+-----+------+
-|1     |BUFG |     1|
-|2     |LUT1 |     1|
-|3     |LUT2 |     1|
-|4     |LUT3 |     1|
-|5     |LUT4 |     2|
-|6     |LUT5 |     2|
-|7     |LUT6 |   125|
-|8     |FDCE |     4|
-|9     |IBUF |   130|
-|10    |OBUF |   128|
-+------+-----+------+
-
-Report Instance Areas: 
-+------+---------+-------+------+
-|      |Instance |Module |Cells |
-+------+---------+-------+------+
-|1     |top      |       |   395|
-+------+---------+-------+------+
++------+------------------------------+------+
+|      |Cell                          |Count |
++------+------------------------------+------+
+|1     |AES_wiring_AddRoundKey_0      |     1|
+|2     |AES_wiring_Display_Manager_0  |     1|
+|3     |AES_wiring_MixColumns_0       |     1|
+|4     |AES_wiring_SevenSegCA_0       |     1|
+|5     |AES_wiring_SevenSegCA_1       |     1|
+|6     |AES_wiring_ShiftRowns_0       |     1|
+|7     |AES_wiring_StateMachine_AES_0 |     1|
+|8     |AES_wiring_SubBytes_0         |     1|
+|9     |AES_wiring_inputs_0           |     1|
+|10    |AES_wiring_mux4_0             |     1|
+|11    |AES_wiring_mux_0              |     2|
+|13    |IBUF                          |     9|
+|14    |OBUF                          |   139|
++------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1207.531 ; gain = 691.711
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 1430.438 ; gain = 527.156
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 1 critical warnings and 3 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1207.531 ; gain = 691.711
-Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1207.531 ; gain = 691.711
+Synthesis finished with 0 errors, 0 critical warnings and 1941 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:48 . Memory (MB): peak = 1430.438 ; gain = 504.309
+Synthesis Optimization Complete : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 1430.438 ; gain = 527.156
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1219.637 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 1436.883 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1313.715 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1442.492 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: ef8477d3
+Synth Design complete | Checksum: 2c2f5387
 INFO: [Common 17-83] Releasing license: Synthesis
-15 Infos, 3 Warnings, 1 Critical Warnings and 0 Errors encountered.
+140 Infos, 108 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1313.715 ; gain = 804.445
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-INFO: [Common 17-1381] The checkpoint 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/AddRoundKey.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file AddRoundKey_utilization_synth.rpt -pb AddRoundKey_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Dec 15 21:00:44 2023...
+synth_design: Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 1442.492 ; gain = 922.711
+INFO: [Common 17-1381] The checkpoint 'D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/AES_wiring_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file AES_wiring_wrapper_utilization_synth.rpt -pb AES_wiring_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Dec 16 17:24:24 2023...

@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log AddRoundKey.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source AddRoundKey.tcl
+EAStep vivado -log AES_wiring_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source AES_wiring_wrapper.tcl

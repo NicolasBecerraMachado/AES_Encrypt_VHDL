@@ -5,11 +5,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity MixColumns is
 generic (N : integer := 8);
 port(
-    input   : in  std_logic_vector(16*N - 1 downto 0);
+    INPUT   : in  std_logic_vector(16*N - 1 downto 0);
     clk     : in std_logic;
     rst     : in std_logic;
     done    : out std_logic;
-    output  : out std_logic_vector(16*N - 1 downto 0));
+    OUTPUT  : out std_logic_vector(16*N - 1 downto 0));
 end MixColumns;
 
 architecture Behavioral of MixColumns is
@@ -75,10 +75,10 @@ begin
     else
         if rising_edge(clk) and complete = '0' then
             for i in 0 to 3 loop
-            data(i)      <= outA(i)      xor outA(16 + 4 + i) xor data(8 + i)      xor data(12 + i);
-            data(i + 4)  <= data(i)      xor outA(4 + i)      xor outA(16 + 8 + i) xor data(12 + i);
-            data(i + 8)  <= data(i)      xor data(4 + i)      xor outA(8 + i)      xor outA(16 + 12 + i);
-            data(i + 12) <= outA(16 + i) xor data(4 + i)      xor data(8 + i)      xor outA(12 + i);
+            data(i*4)     <= outA(i*4)      xor outA(16 + i*4 + 1) xor data(i*4 + 2)      xor data(i*4 + 3);
+            data(i*4 + 1) <= data(i*4)      xor outA(i*4 + 1)      xor outA(16 + i*4 + 2) xor data(i*4 + 3);
+            data(i*4 + 2) <= data(i*4)      xor data(i*4 + 1)      xor outA(i*4 + 2)      xor outA(16 + i*4 + 3);
+            data(i*4 + 3) <= outA(16 + i*4) xor data(i*4 + 1)      xor data(i*4 + 2)      xor outA(i*4 + 3);
             end loop;
             done <= '1';
             complete <= '1';
@@ -93,7 +93,7 @@ begin
         output <= (others => '0');
     elsif complete = '1' then
         for i in 0 to 15 loop
-            output(((15 - i) + 1)*N - 1 downto (15 - i)*N) <= data((15 - i));
+            output((i + 1)*N - 1 downto (i)*N) <= data((15 - i));
         end loop;
     else
     end if;

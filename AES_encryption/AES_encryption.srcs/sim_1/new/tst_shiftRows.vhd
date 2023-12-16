@@ -34,7 +34,14 @@ begin
     input <= (others => '0');
     wait for 10 ns;
     rst <= '1';
-    input <= x"00112233445566778899AABBCCDDEEFF";
+    --input <= x"00112233445566778899AABBCCDDEEFF";
+    input <= x"894d9b03c0b512212e56883c6038534a";
+    wait for 10 ns;
+    rst <= '0';
+    wait for 10 ns;
+    rst <= '1';
+    wait for 10 ns;
+    input <= x"090862bf6f28e3042c747feeda4a6a47";
     wait for 10 ns;
     rst <= '0';
     wait for 10 ns;

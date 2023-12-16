@@ -6,6 +6,7 @@ entity StateMachine_AES is port(
     rst : in std_logic;
     done : out std_logic; --use to siplay AES or not
     muxIn : out std_logic;
+    muxLR : out std_logic; -- use in the last round to select between mixColumns and SR
     --sel : in std_logic_vector(2 downto 0);
     rstO : out std_logic_vector(3 downto 0)
 );
@@ -44,13 +45,21 @@ case state is
         end if;
         done <= '0';
         muxIn <= '1';
+        muxLR <= '0';
     when "001" => -- subBytes
         next_state <= "010";
+        if ct = 10 then
+            muxLR <= '1'; -- select the SR result as input for ARK          
+        end if;
         if rising_edge(notClk) then
             rstO <= "0010"; --make SR read
         end if;
     when "010" => --SR
-        next_state <= "011";
+        if ct = 10 then 
+            next_state <= "100";
+        else
+            next_state <= "011";
+        end if;
         if rising_edge(notClk) then
             rstO <= "0100"; --make MC read
         end if;
@@ -61,7 +70,11 @@ case state is
             rstO <= "1000"; -- make ARK read
         end if;
     when "100" => --ARK
-        next_state <= "101";
+        if ct = 10 then
+            next_state <= "101"; -- end
+        else
+            next_state <= "001"; -- loop back to subBytes
+        end if;
         if rising_edge(notClk) then
             rstO <= "1000"; -- make ARK read
         end if;

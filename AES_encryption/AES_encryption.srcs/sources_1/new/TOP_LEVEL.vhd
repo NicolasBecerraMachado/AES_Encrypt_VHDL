@@ -6,7 +6,7 @@ entity TOP_LEVEL is
 end TOP_LEVEL;
 
 architecture Behavioral of TOP_LEVEL is
-
+    component
 begin
 
 

@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Fri Dec 15 21:00:11 2023
-# Process ID: 20740
+# Start of session at: Sat Dec 16 17:22:49 2023
+# Process ID: 8496
 # Current directory: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1
-# Command line: vivado.exe -log AddRoundKey.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source AddRoundKey.tcl
-# Log file: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/AddRoundKey.vds
+# Command line: vivado.exe -log AES_wiring_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source AES_wiring_wrapper.tcl
+# Log file: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1/AES_wiring_wrapper.vds
 # Journal file: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.runs/synth_1\vivado.jou
 # Running On: LAPTOP-LCTKS4O4, OS: Windows, CPU Frequency: 3294 MHz, CPU Physical cores: 12, Host memory: 16487 MB
 #-----------------------------------------------------------
-source AddRoundKey.tcl -notrace
+source AES_wiring_wrapper.tcl -notrace

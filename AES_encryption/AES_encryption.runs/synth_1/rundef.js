@@ -24,7 +24,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log AddRoundKey.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source AddRoundKey.tcl" );
+         "-log AES_wiring_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source AES_wiring_wrapper.tcl" );
 
 
 

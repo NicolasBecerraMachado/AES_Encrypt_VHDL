@@ -1,0 +1,19 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../AES_encryption.srcs/sources_1/new/Display_Manager.vhd" \
+"../../../../AES_encryption.srcs/sources_1/new/inputs.vhd" \
+"../../../../AES_encryption.srcs/sources_1/new/S_box.vhd" \
+"../../../../AES_encryption.srcs/sources_1/new/SubBytes.vhd" \
+"../../../../AES_encryption.srcs/sources_1/new/mux.vhd" \
+"../../../../AES_encryption.srcs/sources_1/new/StateMachine_Wiring.vhd" \
+"../../../../AES_encryption.srcs/sources_1/new/AddRoundKeys.vhd" \
+"../../../../AES_encryption.srcs/sources_1/new/mux4.vhd" \
+"../../../../AES_encryption.srcs/sources_1/new/ShiftRowns.vhd" \
+"../../../../AES_encryption.srcs/sources_1/new/SevenSegCA.vhd" \
+"../../../../AES_encryption.srcs/sources_1/new/LUT_mul2.vhd" \
+"../../../../AES_encryption.srcs/sources_1/new/LUT_mul3.vhd" \
+"../../../../AES_encryption.srcs/sources_1/new/MixColumns.vhd" \
+"../../../../AES_encryption.srcs/sim_1/new/tst_AES.vhd" \
+
+# Do not sort compile order
+nosort

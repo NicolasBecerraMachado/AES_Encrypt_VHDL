@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1702670406" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ShiftRowns.dcp">
-  <File Type="PA-TCL" Name="AddRoundKey.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="AddRoundKey_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="AddRoundKey_reports.tcl"/>
-  <File Type="RDS-RDS" Name="AddRoundKey.vds"/>
-  <File Type="RDS-UTIL" Name="AddRoundKey_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="AddRoundKey_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="AddRoundKey.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="AddRoundKey_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="AddRoundKey_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1702743763" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ShiftRowns.dcp">
+  <File Type="PA-TCL" Name="AES_wiring_wrapper.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="AES_wiring_wrapper_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="AES_wiring_wrapper_reports.tcl"/>
+  <File Type="RDS-RDS" Name="AES_wiring_wrapper.vds"/>
+  <File Type="RDS-UTIL" Name="AES_wiring_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="AES_wiring_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="AES_wiring_wrapper.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="AES_wiring_wrapper_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="AES_wiring_wrapper_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/AddRoundKeys.vhd">
+    <File Path="$PSRCDIR/sources_1/new/Display_Manager.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/inputs.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -19,70 +25,79 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/S_box.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/SubBytes.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/ShiftRowns.vhd">
+    <File Path="$PSRCDIR/sources_1/new/mux.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/StateMachine_Wiring.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/inputs.vhd">
+    <File Path="$PSRCDIR/sources_1/new/AddRoundKeys.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/Display_Manager.vhd">
+    <File Path="$PSRCDIR/sources_1/new/mux4.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ShiftRowns.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/SevenSegCA.vhd">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/LUT_mul2.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/LUT_mul3.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/MixColumns.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/bd/AES_wiring/AES_wiring.bd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/AES_wiring/hdl/AES_wiring_wrapper.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -95,23 +110,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/mux.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/SevenSegCA.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="AddRoundKey"/>
+      <Option Name="TopModule" Val="AES_wiring_wrapper"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -138,4 +139,16 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="AES_wiring_StateMachine_AES_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_wiring_Display_Manager_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_wiring_mux_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_wiring_MixColumns_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_wiring_inputs_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_wiring_mux4_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_wiring_AddRoundKey_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_wiring_SubBytes_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_wiring_mux_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_wiring_SevenSegCA_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_wiring_SevenSegCA_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="AES_wiring_ShiftRowns_0_0"/>
 </GenRun>

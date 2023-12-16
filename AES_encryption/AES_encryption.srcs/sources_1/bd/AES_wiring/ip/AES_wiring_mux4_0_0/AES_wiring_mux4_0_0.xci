@@ -1,0 +1,64 @@
+{
+  "schema": "xilinx.com:schema:json_instance:1.0",
+  "ip_inst": {
+    "xci_name": "AES_wiring_mux4_0_0",
+    "cell_name": "mux4_0",
+    "component_reference": "xilinx.com:module_ref:mux4:1.0",
+    "ip_revision": "1",
+    "gen_directory": "../../../../../../AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_mux4_0_0",
+    "parameters": {
+      "component_parameters": {
+        "N": [ { "value": "3", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "Component_Name": [ { "value": "AES_wiring_mux4_0_0", "resolve_type": "user", "usage": "all" } ]
+      },
+      "model_parameters": {
+        "N": [ { "value": "3", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+      },
+      "project_parameters": {
+        "ARCHITECTURE": [ { "value": "artix7" } ],
+        "BASE_BOARD_PART": [ { "value": "digilentinc.com:basys3:part0:1.2" } ],
+        "BOARD_CONNECTIONS": [ { "value": "" } ],
+        "DEVICE": [ { "value": "xc7a35t" } ],
+        "PACKAGE": [ { "value": "cpg236" } ],
+        "PREFHDL": [ { "value": "VERILOG" } ],
+        "SILICON_REVISION": [ { "value": "" } ],
+        "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
+        "SPEEDGRADE": [ { "value": "-1" } ],
+        "STATIC_POWER": [ { "value": "" } ],
+        "TEMPERATURE_GRADE": [ { "value": "" } ]
+      },
+      "runtime_parameters": {
+        "IPCONTEXT": [ { "value": "IP_Integrator" } ],
+        "IPREVISION": [ { "value": "1" } ],
+        "MANAGED": [ { "value": "TRUE" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_mux4_0_0" } ],
+        "SELECTEDSIMMODEL": [ { "value": "" } ],
+        "SHAREDDIR": [ { "value": "../../ipshared" } ],
+        "SWVERSION": [ { "value": "2023.1" } ],
+        "SYNTHESISFLOW": [ { "value": "OOC_HIERARCHICAL" } ]
+      }
+    },
+    "boundary": {
+      "ports": {
+        "in1": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "in2": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "in3": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "in4": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "in5": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "in6": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "in7": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "in8": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "in9": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "in10": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "in11": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "in12": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "in13": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "in14": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "in15": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "in16": [ { "direction": "in", "size_left": "7", "size_right": "0" } ],
+        "sel": [ { "direction": "in", "size_left": "3", "size_right": "0" } ],
+        "outM": [ { "direction": "out", "size_left": "7", "size_right": "0" } ]
+      }
+    }
+  }
+}
