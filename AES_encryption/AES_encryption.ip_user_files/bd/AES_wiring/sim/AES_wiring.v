@@ -2,7 +2,7 @@
 //Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-//Date        : Sat Dec 16 16:42:00 2023
+//Date        : Sun Dec 17 13:01:47 2023
 //Host        : LAPTOP-LCTKS4O4 running 64-bit major release  (build 9200)
 //Command     : generate_target AES_wiring.bd
 //Design      : AES_wiring
@@ -10,9 +10,13 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "AES_wiring,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=AES_wiring,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=35,numReposBlks=35,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=12,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "AES_wiring.hwdef" *) 
+(* CORE_GENERATION_INFO = "AES_wiring,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=AES_wiring,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=35,numReposBlks=35,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=12,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=1,synth_mode=OOC_per_BD}" *) (* HW_HANDOFF = "AES_wiring.hwdef" *) 
 module AES_wiring
-   (OutARK,
+   (MUXPI,
+    OutARK,
+    OutMC,
+    OutSB,
+    OutSR,
     SEG,
     SeDispBit,
     SelInput,
@@ -20,8 +24,14 @@ module AES_wiring
     clk,
     done,
     rst,
-    sel_0);
+    rstO,
+    sel_0,
+    state);
+  output [127:0]MUXPI;
   output [127:0]OutARK;
+  output [127:0]OutMC;
+  output [127:0]OutSB;
+  output [127:0]OutSR;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SEG DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SEG, LAYERED_METADATA undef" *) output [6:0]SEG;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SEDISPBIT DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SEDISPBIT, LAYERED_METADATA undef" *) input [0:3]SeDispBit;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SELINPUT DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SELINPUT, LAYERED_METADATA undef" *) input [0:1]SelInput;
@@ -29,9 +39,11 @@ module AES_wiring
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_RESET rst, CLK_DOMAIN AES_wiring_clk, FREQ_HZ 4000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk;
   output done;
   input rst;
+  output [3:0]rstO;
   output [2:0]sel_0;
+  output [2:0]state;
 
-  wire [127:0]AddRoundKey_0_Output;
+  wire [127:0]AddRoundKey_0_Outputs;
   wire [6:0]Display_Manager_0_seg;
   wire [2:0]Display_Manager_0_sel;
   wire [127:0]MixColumns_0_output;
@@ -39,13 +51,14 @@ module AES_wiring
   wire [0:1]SelInput_1;
   wire [6:0]SevenSegCA_0_Output;
   wire [6:0]SevenSegCA_1_Output;
-  wire [127:0]ShiftRowns_0_output;
+  wire [127:0]ShiftRowns_0_OUTPUTs;
   wire Show_1;
   wire StateMachine_AES_0_done;
   wire StateMachine_AES_0_muxIn;
   wire StateMachine_AES_0_muxLR;
   wire [3:0]StateMachine_AES_0_rstO;
-  wire [127:0]SubBytes_0_Output;
+  wire [2:0]StateMachine_AES_0_stateO;
+  wire [127:0]SubBytes_0_Outputs;
   wire clk_1;
   wire [127:0]inputs_0_currIn;
   wire [7:0]mux4_0_outM;
@@ -75,18 +88,24 @@ module AES_wiring
   wire [7:0]xlslice_8_Dout;
   wire [7:0]xlslice_9_Dout;
 
-  assign OutARK[127:0] = AddRoundKey_0_Output;
+  assign MUXPI[127:0] = mux_1_outM;
+  assign OutARK[127:0] = AddRoundKey_0_Outputs;
+  assign OutMC[127:0] = MixColumns_0_output;
+  assign OutSB[127:0] = SubBytes_0_Outputs;
+  assign OutSR[127:0] = ShiftRowns_0_OUTPUTs;
   assign SEG[6:0] = Display_Manager_0_seg;
   assign SeDispBit_1 = SeDispBit[0:3];
   assign SelInput_1 = SelInput[0:1];
   assign Show_1 = Show;
   assign clk_1 = clk;
   assign done = StateMachine_AES_0_done;
+  assign rstO[3:0] = StateMachine_AES_0_rstO;
   assign rst_1 = rst;
   assign sel_0[2:0] = Display_Manager_0_sel;
+  assign state[2:0] = StateMachine_AES_0_stateO;
   AES_wiring_AddRoundKey_0_0 AddRoundKey_0
-       (.Input(mux_0_outM),
-        .Output(AddRoundKey_0_Output),
+       (.Inputs(mux_0_outM),
+        .Outputs(AddRoundKey_0_Outputs),
         .clk(clk_1),
         .count(xlslice_3_Dout),
         .rst(rst_1));
@@ -98,20 +117,20 @@ module AES_wiring
         .sel(Display_Manager_0_sel),
         .show(Show_1));
   AES_wiring_MixColumns_0_0 MixColumns_0
-       (.clk(clk_1),
-        .\input (ShiftRowns_0_output),
-        .\output (MixColumns_0_output),
+       (.INPUTs(ShiftRowns_0_OUTPUTs),
+        .OUTPUTs(MixColumns_0_output),
+        .clk(clk_1),
         .rst(xlslice_2_Dout));
   AES_wiring_SevenSegCA_0_0 SevenSegCA_0
-       (.Input(xlslice_20_Dout),
-        .Output(SevenSegCA_0_Output));
+       (.INPUTS(xlslice_20_Dout),
+        .OUTPUTS(SevenSegCA_0_Output));
   AES_wiring_SevenSegCA_1_0 SevenSegCA_1
-       (.Input(xlslice_21_Dout),
-        .Output(SevenSegCA_1_Output));
+       (.INPUTS(xlslice_21_Dout),
+        .OUTPUTS(SevenSegCA_1_Output));
   AES_wiring_ShiftRowns_0_0 ShiftRowns_0
-       (.clk(clk_1),
-        .\input (SubBytes_0_Output),
-        .\output (ShiftRowns_0_output),
+       (.INPUTs(SubBytes_0_Outputs),
+        .OUTPUTs(ShiftRowns_0_OUTPUTs),
+        .clk(clk_1),
         .rst(xlslice_1_Dout));
   AES_wiring_StateMachine_AES_0_0 StateMachine_AES_0
        (.clk(clk_1),
@@ -119,10 +138,11 @@ module AES_wiring
         .muxIn(StateMachine_AES_0_muxIn),
         .muxLR(StateMachine_AES_0_muxLR),
         .rst(rst_1),
-        .rstO(StateMachine_AES_0_rstO));
+        .rstO(StateMachine_AES_0_rstO),
+        .stateO(StateMachine_AES_0_stateO));
   AES_wiring_SubBytes_0_0 SubBytes_0
-       (.Input(AddRoundKey_0_Output),
-        .Output(SubBytes_0_Output));
+       (.Inputs(AddRoundKey_0_Outputs),
+        .Outputs(SubBytes_0_Outputs));
   AES_wiring_inputs_0_0 inputs_0
        (.currIn(inputs_0_currIn),
         .sel({SelInput_1[0],SelInput_1[1]}));
@@ -151,7 +171,7 @@ module AES_wiring
         .outM(mux_0_outM),
         .sel(StateMachine_AES_0_muxIn));
   AES_wiring_mux_0_1 mux_1
-       (.in1(ShiftRowns_0_output),
+       (.in1(ShiftRowns_0_OUTPUTs),
         .in2(MixColumns_0_output),
         .outM(mux_1_outM),
         .sel(StateMachine_AES_0_muxLR));
@@ -165,34 +185,34 @@ module AES_wiring
        (.Din(StateMachine_AES_0_rstO),
         .Dout(xlslice_1_Dout));
   AES_wiring_xlslice_4_5 xlslice_10
-       (.Din(AddRoundKey_0_Output),
+       (.Din(AddRoundKey_0_Outputs),
         .Dout(xlslice_10_Dout));
   AES_wiring_xlslice_4_6 xlslice_11
-       (.Din(AddRoundKey_0_Output),
+       (.Din(AddRoundKey_0_Outputs),
         .Dout(xlslice_11_Dout));
   AES_wiring_xlslice_4_7 xlslice_12
-       (.Din(AddRoundKey_0_Output),
+       (.Din(AddRoundKey_0_Outputs),
         .Dout(xlslice_12_Dout));
   AES_wiring_xlslice_4_8 xlslice_13
-       (.Din(AddRoundKey_0_Output),
+       (.Din(AddRoundKey_0_Outputs),
         .Dout(xlslice_13_Dout));
   AES_wiring_xlslice_4_9 xlslice_14
-       (.Din(AddRoundKey_0_Output),
+       (.Din(AddRoundKey_0_Outputs),
         .Dout(xlslice_14_Dout));
   AES_wiring_xlslice_4_10 xlslice_15
-       (.Din(AddRoundKey_0_Output),
+       (.Din(AddRoundKey_0_Outputs),
         .Dout(xlslice_15_Dout));
   AES_wiring_xlslice_4_11 xlslice_16
-       (.Din(AddRoundKey_0_Output),
+       (.Din(AddRoundKey_0_Outputs),
         .Dout(xlslice_16_Dout));
   AES_wiring_xlslice_4_12 xlslice_17
-       (.Din(AddRoundKey_0_Output),
+       (.Din(AddRoundKey_0_Outputs),
         .Dout(xlslice_17_Dout));
   AES_wiring_xlslice_4_13 xlslice_18
-       (.Din(AddRoundKey_0_Output),
+       (.Din(AddRoundKey_0_Outputs),
         .Dout(xlslice_18_Dout));
   AES_wiring_xlslice_4_14 xlslice_19
-       (.Din(AddRoundKey_0_Output),
+       (.Din(AddRoundKey_0_Outputs),
         .Dout(xlslice_19_Dout));
   AES_wiring_xlslice_1_0 xlslice_2
        (.Din(StateMachine_AES_0_rstO),
@@ -207,21 +227,21 @@ module AES_wiring
        (.Din(StateMachine_AES_0_rstO),
         .Dout(xlslice_3_Dout));
   AES_wiring_xlslice_0_2 xlslice_4
-       (.Din(AddRoundKey_0_Output),
+       (.Din(AddRoundKey_0_Outputs),
         .Dout(xlslice_4_Dout));
   AES_wiring_xlslice_4_0 xlslice_5
-       (.Din(AddRoundKey_0_Output),
+       (.Din(AddRoundKey_0_Outputs),
         .Dout(xlslice_5_Dout));
   AES_wiring_xlslice_4_1 xlslice_6
-       (.Din(AddRoundKey_0_Output),
+       (.Din(AddRoundKey_0_Outputs),
         .Dout(xlslice_6_Dout));
   AES_wiring_xlslice_4_2 xlslice_7
-       (.Din(AddRoundKey_0_Output),
+       (.Din(AddRoundKey_0_Outputs),
         .Dout(xlslice_7_Dout));
   AES_wiring_xlslice_4_3 xlslice_8
-       (.Din(AddRoundKey_0_Output),
+       (.Din(AddRoundKey_0_Outputs),
         .Dout(xlslice_8_Dout));
   AES_wiring_xlslice_4_4 xlslice_9
-       (.Din(AddRoundKey_0_Output),
+       (.Din(AddRoundKey_0_Outputs),
         .Dout(xlslice_9_Dout));
 endmodule

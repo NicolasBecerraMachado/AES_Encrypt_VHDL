@@ -5,11 +5,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity MixColumns is
 generic (N : integer := 8);
 port(
-    INPUT   : in  std_logic_vector(16*N - 1 downto 0);
+    INPUTs   : in  std_logic_vector(16*N - 1 downto 0);
     clk     : in std_logic;
     rst     : in std_logic;
     done    : out std_logic;
-    OUTPUT  : out std_logic_vector(16*N - 1 downto 0));
+    OUTPUTs  : out std_logic_vector(16*N - 1 downto 0));
 end MixColumns;
 
 architecture Behavioral of MixColumns is
@@ -68,7 +68,7 @@ process(clk,rst)
 begin
     if rst = '1' then
         for j in 0 to 15 loop
-            data(j) <= input(((15-j+1)*N) - 1 downto (15-j)*N);
+            data(j) <= inputs(((15-j+1)*N) - 1 downto (15-j)*N);
         end loop;
         done <= '0';
         complete <= '0';
@@ -90,10 +90,10 @@ end process;
 process(rst,complete)
 begin
     if rst = '1' then
-        output <= (others => '0');
+        outputs <= (others => '0');
     elsif complete = '1' then
         for i in 0 to 15 loop
-            output((i + 1)*N - 1 downto (i)*N) <= data((15 - i));
+            outputs((i + 1)*N - 1 downto (i)*N) <= data((15 - i));
         end loop;
     else
     end if;

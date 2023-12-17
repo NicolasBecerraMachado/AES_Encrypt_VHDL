@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Sat Dec 16 17:24:24 2023
+| Date         : Sun Dec 17 14:45:36 2023
 | Host         : LAPTOP-LCTKS4O4 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file AES_wiring_wrapper_utilization_synth.rpt -pb AES_wiring_wrapper_utilization_synth.pb
 | Design       : AES_wiring_wrapper
@@ -92,7 +92,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 +-----------------------------+------+-------+------------+-----------+--------+
 |          Site Type          | Used | Fixed | Prohibited | Available |  Util% |
 +-----------------------------+------+-------+------------+-----------+--------+
-| Bonded IOB                  |  148 |     0 |          0 |       106 | 139.62 |
+| Bonded IOB                  |  667 |     0 |          0 |       106 | 629.25 |
 | Bonded IPADs                |    0 |     0 |          0 |        10 |   0.00 |
 | Bonded OPADs                |    0 |     0 |          0 |         4 |   0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         5 |   0.00 |
@@ -151,7 +151,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| OBUF     |  139 |                  IO |
+| OBUF     |  658 |                  IO |
 | IBUF     |    9 |                  IO |
 +----------+------+---------------------+
 
@@ -159,22 +159,11 @@ Warning! LUT value is adjusted to account for LUT combining.
 8. Black Boxes
 --------------
 
-+---------------------------------+------+
-|             Ref Name            | Used |
-+---------------------------------+------+
-| AES_wiring_mux_0_1              |    1 |
-| AES_wiring_mux_0_0              |    1 |
-| AES_wiring_mux4_0_0             |    1 |
-| AES_wiring_inputs_0_0           |    1 |
-| AES_wiring_SubBytes_0_0         |    1 |
-| AES_wiring_StateMachine_AES_0_0 |    1 |
-| AES_wiring_ShiftRowns_0_0       |    1 |
-| AES_wiring_SevenSegCA_1_0       |    1 |
-| AES_wiring_SevenSegCA_0_0       |    1 |
-| AES_wiring_MixColumns_0_0       |    1 |
-| AES_wiring_Display_Manager_0_0  |    1 |
-| AES_wiring_AddRoundKey_0_0      |    1 |
-+---------------------------------+------+
++------------+------+
+|  Ref Name  | Used |
++------------+------+
+| AES_wiring |    1 |
++------------+------+
 
 
 9. Instantiated Netlists

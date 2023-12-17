@@ -9,8 +9,8 @@ entity AddRoundKey is port(
     clk    : in std_logic;
     rst    : in std_logic;
     count  : in std_logic;
-    Input  : in std_logic_vector(127 downto 0);
-    Output : out std_logic_vector(127 downto 0)
+    Inputs  : in std_logic_vector(127 downto 0);
+    Outputs : out std_logic_vector(127 downto 0)
 );
 end AddRoundKey;
 
@@ -20,7 +20,7 @@ signal RoundKey : std_logic_vector(127 downto 0);
 signal ands     : std_logic_vector(127 downto 0);
 begin
 
-Output <= (Input xor RoundKey) and ands;
+Outputs <= (Inputs xor RoundKey) and ands;
 
 process(rst)
 begin
@@ -37,7 +37,11 @@ begin
         counter <= 0;
     else    
         if rising_edge(count) then
-            counter <= counter + 1;
+            if counter > 10 then
+                counter <= 0;
+            else
+                counter <= counter + 1;
+            end if;
         end if;
     end if;
 end process;

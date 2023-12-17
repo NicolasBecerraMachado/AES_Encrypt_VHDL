@@ -31,7 +31,7 @@
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
         "SWVERSION": [ { "value": "2023.1" } ],
-        "SYNTHESISFLOW": [ { "value": "OOC_HIERARCHICAL" } ]
+        "SYNTHESISFLOW": [ { "value": "GLOBAL" } ]
       }
     },
     "boundary": {
@@ -39,8 +39,8 @@
         "clk": [ { "direction": "in" } ],
         "rst": [ { "direction": "in" } ],
         "count": [ { "direction": "in" } ],
-        "Input": [ { "direction": "in", "size_left": "127", "size_right": "0" } ],
-        "Output": [ { "direction": "out", "size_left": "127", "size_right": "0" } ]
+        "Inputs": [ { "direction": "in", "size_left": "127", "size_right": "0" } ],
+        "Outputs": [ { "direction": "out", "size_left": "127", "size_right": "0" } ]
       },
       "interfaces": {
         "rst": {

@@ -6,8 +6,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity SubBytes is port(
-    Input  : in std_logic_vector(127 downto 0);
-    Output : out std_logic_vector(127 downto 0)
+    Inputs  : in std_logic_vector(127 downto 0);
+    Outputs : out std_logic_vector(127 downto 0)
 );
 end SubBytes;
 
@@ -20,7 +20,7 @@ end component;
 begin
 
 SBoxs : for i in 0 to 15 generate
-    Sb: S_box port map(byte_in => Input((i+1)*8-1 downto i*8), byte_out => Output((i+1)*8-1 downto i*8));
+    Sb: S_box port map(byte_in => Inputs((i+1)*8-1 downto i*8), byte_out => Outputs((i+1)*8-1 downto i*8));
 end generate;
 
 end Behavioral;

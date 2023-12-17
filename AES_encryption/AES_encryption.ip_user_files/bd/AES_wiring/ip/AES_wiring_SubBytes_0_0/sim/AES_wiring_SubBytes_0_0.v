@@ -55,15 +55,15 @@
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module AES_wiring_SubBytes_0_0 (
-  Input,
-  Output
+  Inputs,
+  Outputs
 );
 
-input wire [127 : 0] Input;
-output wire [127 : 0] Output;
+input wire [127 : 0] Inputs;
+output wire [127 : 0] Outputs;
 
   SubBytes inst (
-    .Input(Input),
-    .Output(Output)
+    .Inputs(Inputs),
+    .Outputs(Outputs)
   );
 endmodule

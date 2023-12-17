@@ -16,7 +16,7 @@ architecture Behavioral of Display_Manager is
 signal shift : std_logic_vector(2 downto 0) := "001";
 begin
 
-process
+process(clk)
 begin
     if rising_edge(clk) then
         if show = '1' then
@@ -31,7 +31,7 @@ begin
     end if;
 end process;
 
-process(shift)
+process(shift,show)
 begin
     if show = '1' then
         case shift is

@@ -24,13 +24,14 @@ architecture Behavioral of mux is
 
 begin
 
-process
+process(sel,in1,in2)
 begin
     case sel is
         when '1' =>
             outM <= in1;
         when '0' =>
             outM <= in2;
+        when others =>
         end case;
 end process;
 

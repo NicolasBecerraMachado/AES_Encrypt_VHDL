@@ -58,8 +58,8 @@ module AES_wiring_AddRoundKey_0_0 (
   clk,
   rst,
   count,
-  Input,
-  Output
+  Inputs,
+  Outputs
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 4000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN AES_wiring_clk, INSERT_VIP 0" *)
@@ -69,14 +69,14 @@ input wire clk;
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
 input wire rst;
 input wire count;
-input wire [127 : 0] Input;
-output wire [127 : 0] Output;
+input wire [127 : 0] Inputs;
+output wire [127 : 0] Outputs;
 
   AddRoundKey inst (
     .clk(clk),
     .rst(rst),
     .count(count),
-    .Input(Input),
-    .Output(Output)
+    .Inputs(Inputs),
+    .Outputs(Outputs)
   );
 endmodule

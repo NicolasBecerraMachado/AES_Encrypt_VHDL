@@ -56,15 +56,15 @@
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module AES_wiring_SevenSegCA_0_0 (
-  INPUT,
-  OUTPUT
+  INPUTS,
+  OUTPUTS
 );
 
-input wire [3 : 0] INPUT;
-output wire [6 : 0] OUTPUT;
+input wire [3 : 0] INPUTS;
+output wire [6 : 0] OUTPUTS;
 
   SevenSegCA inst (
-    .INPUT(INPUT),
-    .OUTPUT(OUTPUT)
+    .INPUTS(INPUTS),
+    .OUTPUTS(OUTPUTS)
   );
 endmodule

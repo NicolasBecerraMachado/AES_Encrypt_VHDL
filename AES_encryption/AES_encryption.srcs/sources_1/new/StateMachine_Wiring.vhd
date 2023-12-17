@@ -7,6 +7,7 @@ entity StateMachine_AES is port(
     done : out std_logic; --use to siplay AES or not
     muxIn : out std_logic;
     muxLR : out std_logic; -- use in the last round to select between mixColumns and SR
+    stateO : out std_logic_vector(2 downto 0);
     --sel : in std_logic_vector(2 downto 0);
     rstO : out std_logic_vector(3 downto 0)
 );
@@ -20,14 +21,16 @@ begin
 
 notClk <= not clk;
 
+stateO <= state;
+
 process(clk)
 begin
     if rising_edge(clk) then
-        if rst <= '1' then
+        if rst = '1' then
             state <= "000";
-            next_state <= "001";
+            ct <= 1;
         else
-            next_state <= state;
+            state <= next_state;
             if state = "100" then
                 ct <= ct + 1;
             end if;
@@ -35,7 +38,7 @@ begin
     end if;
 end process;
 
-process(state)
+process(state,notClk)
 begin
 case state is
     when "000" => --begin
@@ -48,26 +51,28 @@ case state is
         muxLR <= '0';
     when "001" => -- subBytes
         next_state <= "010";
-        if ct = 10 then
-            muxLR <= '1'; -- select the SR result as input for ARK          
-        end if;
         if rising_edge(notClk) then
             rstO <= "0010"; --make SR read
         end if;
     when "010" => --SR
         if ct = 10 then 
-            next_state <= "100";
+            next_state <= "100";         
         else
             next_state <= "011";
         end if;
         if rising_edge(notClk) then
-            rstO <= "0100"; --make MC read
+            if ct = 10 then
+                muxLR <= '1'; -- select the SR result as input for ARK 
+                rstO <= "1000";
+            else
+                rstO <= "0100"; --make MC read
+            end if;
         end if;
         muxIn <= '0';--change mux of ARK
     when "011" => --MC
         next_state <= "100";
         if rising_edge(notClk) then
-            rstO <= "1000"; -- make ARK read
+            rstO <= "1000"; -- update ARK counter
         end if;
     when "100" => --ARK
         if ct = 10 then
@@ -76,15 +81,15 @@ case state is
             next_state <= "001"; -- loop back to subBytes
         end if;
         if rising_edge(notClk) then
-            rstO <= "1000"; -- make ARK read
+            rstO <= "0001"; -- update ARK counter
         end if;
     when "101" => --end
         next_state <= "101";
-        rstO <= "1111";
+        rstO <= "0000";
         done <= '1';
     when others =>
         next_state <= "111";
-        rstO <= "1111";
+        rstO <= "0000";
     end case;
 end process;
 

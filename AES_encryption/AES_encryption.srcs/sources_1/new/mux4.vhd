@@ -38,7 +38,7 @@ architecture Behavioral of mux4 is
 
 begin
 
-process
+process(sel)
 begin
     case sel is
         when "0000" =>
@@ -73,6 +73,7 @@ begin
             outM <= in15;
         when "1111" =>
             outM <= in16;
+        when others =>
         end case;
 end process;
 

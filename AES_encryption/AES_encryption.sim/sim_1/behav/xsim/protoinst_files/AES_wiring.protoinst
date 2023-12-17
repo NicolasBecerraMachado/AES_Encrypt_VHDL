@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"AES_wiring": {
+			"proto_instances": {
+			}
+		}
+	}
+}

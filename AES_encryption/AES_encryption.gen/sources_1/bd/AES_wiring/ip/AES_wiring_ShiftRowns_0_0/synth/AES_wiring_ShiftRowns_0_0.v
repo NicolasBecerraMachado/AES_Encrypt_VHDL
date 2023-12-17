@@ -56,30 +56,30 @@
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module AES_wiring_ShiftRowns_0_0 (
-  INPUT,
+  INPUTs,
   clk,
   rst,
-  OUTPUT,
+  OUTPUTs,
   done
 );
 
-input wire [127 : 0] INPUT;
+input wire [127 : 0] INPUTs;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 4000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN AES_wiring_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
 input wire rst;
-output wire [127 : 0] OUTPUT;
+output wire [127 : 0] OUTPUTs;
 output wire done;
 
   ShiftRowns #(
     .N(8)
   ) inst (
-    .INPUT(INPUT),
+    .INPUTs(INPUTs),
     .clk(clk),
     .rst(rst),
-    .OUTPUT(OUTPUT),
+    .OUTPUTs(OUTPUTs),
     .done(done)
   );
 endmodule

@@ -22,6 +22,8 @@ begin
             currIn <= x"30C81C46A35CE411E5FBC1191A0A52EF";
         when "11" =>
             currIn <= x"F69F2445DF4F9B17AD2B417BE66C3710";
+        when others =>
+            currIn <= (others => '1');
     end case;
 end process;
 

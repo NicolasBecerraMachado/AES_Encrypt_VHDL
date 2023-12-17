@@ -60,6 +60,7 @@ module AES_wiring_StateMachine_AES_0_0 (
   done,
   muxIn,
   muxLR,
+  stateO,
   rstO
 );
 
@@ -72,6 +73,7 @@ input wire rst;
 output wire done;
 output wire muxIn;
 output wire muxLR;
+output wire [2 : 0] stateO;
 output wire [3 : 0] rstO;
 
   StateMachine_AES inst (
@@ -80,6 +82,7 @@ output wire [3 : 0] rstO;
     .done(done),
     .muxIn(muxIn),
     .muxLR(muxLR),
+    .stateO(stateO),
     .rstO(rstO)
   );
 endmodule

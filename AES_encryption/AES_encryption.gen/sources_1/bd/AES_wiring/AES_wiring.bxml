@@ -2,11 +2,44 @@
 <Root MajorVersion="0" MinorVersion="40">
   <CompositeFile CompositeFileTopName="AES_wiring" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1702743158"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1702743158"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1702743158"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1702743158"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1702820491"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1702820491"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1702820491"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1702820491"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
+      <File Name="AES_wiring_sim_netlist.vhdl" Type="VHDL">
+        <Properties IsEditable="true" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="true" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+        <UsedIn Val="SINGLE_LANGUAGE"/>
+        <ProcessingOrder Val="NORMAL"/>
+      </File>
+      <File Name="AES_wiring_sim_netlist.v" Type="Verilog">
+        <Properties IsEditable="true" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="true" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+        <UsedIn Val="SINGLE_LANGUAGE"/>
+        <ProcessingOrder Val="NORMAL"/>
+      </File>
+      <File Name="AES_wiring_stub.vhdl" Type="VHDL">
+        <Properties IsEditable="true" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="true" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTH_BLACKBOX_STUB"/>
+        <ProcessingOrder Val="NORMAL"/>
+      </File>
+      <File Name="AES_wiring_stub.v" Type="Verilog">
+        <Properties IsEditable="true" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="true" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTH_BLACKBOX_STUB"/>
+        <ProcessingOrder Val="NORMAL"/>
+      </File>
+      <File Name="AES_wiring.dcp" Type="DCP">
+        <Properties IsEditable="true" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="true" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <ProcessingOrder Val="NORMAL"/>
+      </File>
       <File Name="synth\AES_wiring.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>

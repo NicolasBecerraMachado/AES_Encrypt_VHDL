@@ -56,14 +56,14 @@
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module AES_wiring_MixColumns_0_0 (
-  INPUT,
+  INPUTs,
   clk,
   rst,
   done,
-  OUTPUT
+  OUTPUTs
 );
 
-input wire [127 : 0] INPUT;
+input wire [127 : 0] INPUTs;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 4000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN AES_wiring_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
@@ -71,15 +71,15 @@ input wire clk;
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
 input wire rst;
 output wire done;
-output wire [127 : 0] OUTPUT;
+output wire [127 : 0] OUTPUTs;
 
   MixColumns #(
     .N(8)
   ) inst (
-    .INPUT(INPUT),
+    .INPUTs(INPUTs),
     .clk(clk),
     .rst(rst),
     .done(done),
-    .OUTPUT(OUTPUT)
+    .OUTPUTs(OUTPUTs)
   );
 endmodule

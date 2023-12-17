@@ -1,17 +1,5 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_Display_Manager_0_0/sim/AES_wiring_Display_Manager_0_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module AES_wiring_Display_Manager_0_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_inputs_0_0/sim/AES_wiring_inputs_0_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module AES_wiring_inputs_0_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_SubBytes_0_0/sim/AES_wiring_SubBytes_0_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module AES_wiring_SubBytes_0_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_xlconcat_0_0/sim/AES_wiring_xlconcat_0_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AES_wiring_xlconcat_0_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_mux_0_1/sim/AES_wiring_mux_0_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module AES_wiring_mux_0_1
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_StateMachine_AES_0_0/sim/AES_wiring_StateMachine_AES_0_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module AES_wiring_StateMachine_AES_0_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_AddRoundKey_0_0/sim/AES_wiring_AddRoundKey_0_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module AES_wiring_AddRoundKey_0_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_xlslice_0_0/sim/AES_wiring_xlslice_0_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AES_wiring_xlslice_0_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_xlslice_0_1/sim/AES_wiring_xlslice_0_1.v" into library xil_defaultlib
@@ -52,14 +40,37 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encry
 INFO: [VRFC 10-311] analyzing module AES_wiring_xlslice_4_13
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_xlslice_4_14/sim/AES_wiring_xlslice_4_14.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AES_wiring_xlslice_4_14
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_mux_0_0/sim/AES_wiring_mux_0_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module AES_wiring_mux_0_0
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_mux4_0_0/sim/AES_wiring_mux4_0_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module AES_wiring_mux4_0_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_xlslice_18_0/sim/AES_wiring_xlslice_18_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AES_wiring_xlslice_18_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_xlslice_20_0/sim/AES_wiring_xlslice_20_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AES_wiring_xlslice_20_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_ShiftRowns_0_0/sim/AES_wiring_ShiftRowns_0_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AES_wiring_ShiftRowns_0_0
-ERROR: [VRFC 10-4982] syntax error near ',' [D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_ShiftRowns_0_0/sim/AES_wiring_ShiftRowns_0_0.v:58]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_MixColumns_0_0/sim/AES_wiring_MixColumns_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_wiring_MixColumns_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_SubBytes_0_0/sim/AES_wiring_SubBytes_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_wiring_SubBytes_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_SevenSegCA_0_0/sim/AES_wiring_SevenSegCA_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_wiring_SevenSegCA_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_SevenSegCA_1_0/sim/AES_wiring_SevenSegCA_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_wiring_SevenSegCA_1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_inputs_0_0/sim/AES_wiring_inputs_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_wiring_inputs_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_mux4_0_0/sim/AES_wiring_mux4_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_wiring_mux4_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_Display_Manager_0_0/sim/AES_wiring_Display_Manager_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_wiring_Display_Manager_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_AddRoundKey_0_0/sim/AES_wiring_AddRoundKey_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_wiring_AddRoundKey_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_mux_0_0/sim/AES_wiring_mux_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_wiring_mux_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_mux_0_1/sim/AES_wiring_mux_0_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_wiring_mux_0_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/ip/AES_wiring_StateMachine_AES_0_0/sim/AES_wiring_StateMachine_AES_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_wiring_StateMachine_AES_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.ip_user_files/bd/AES_wiring/sim/AES_wiring.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_wiring
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/hdl/AES_wiring_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AES_wiring_wrapper
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sim_1/new/tst_AES.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tst_AES'
