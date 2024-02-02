@@ -12,23 +12,23 @@ begin
 process(Inputs)
 begin
     case Inputs is
-        when "0000" => Outputs <= "1000000"; -- "0"
-        when "0001" => Outputs <= "1111001"; -- "1"
-        when "0010" => Outputs <= "0100100"; -- "2"
-        when "0011" => Outputs <= "0110000"; -- "3"
-        when "0100" => Outputs <= "0011001"; -- "4"
-        when "0101" => Outputs <= "0010010"; -- "5"
-        when "0110" => Outputs <= "1000010"; -- "6"
-        when "0111" => Outputs <= "1111000"; -- "7"
-        when "1000" => Outputs <= "0000000"; -- "8"
-        when "1001" => Outputs <= "0010000"; -- "9"
-        when "1010" => Outputs <= "0100000"; -- a
-        when "1011" => Outputs <= "0000011"; -- b
-        when "1100" => Outputs <= "1000110"; -- C
-        when "1101" => Outputs <= "1000010"; -- d
-        when "1110" => Outputs <= "0000110"; -- E
-        when "1111" => Outputs <= "0001110"; -- F
-        when others => Outputs <= "0000000"; -- 8
+        when "0000" => Outputs <= not("1111110"); -- "0"
+        when "0001" => Outputs <= not("0110000"); -- "1"
+        when "0010" => Outputs <= not("1101101"); -- "2"
+        when "0011" => Outputs <= not("1111001"); -- "3"
+        when "0100" => Outputs <= not("0110011"); -- "4"
+        when "0101" => Outputs <= not("1011011"); -- "5"
+        when "0110" => Outputs <= not("1011111"); -- "6"
+        when "0111" => Outputs <= not("1110000"); -- "7"
+        when "1000" => Outputs <= not("1111111"); -- "8"
+        when "1001" => Outputs <= not("1110011"); -- "9"
+        when "1010" => Outputs <= not("1110111"); -- a
+        when "1011" => Outputs <= not("0011111"); -- b
+        when "1100" => Outputs <= not("1001110"); -- C
+        when "1101" => Outputs <= not("0111101"); -- d
+        when "1110" => Outputs <= not("1001111"); -- E
+        when "1111" => Outputs <= not("1000111"); -- F
+        when others => Outputs <= not("1111110"); -- 8
     end case;
 end process;
 

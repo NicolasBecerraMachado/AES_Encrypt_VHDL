@@ -12,14 +12,15 @@ component AES_wiring_wrapper is port(
     clk        : in std_logic;
     rst        : in std_logic;
     done       : out std_logic;
-    OutARK     : out std_logic_vector(127 downto 0);
-    OutMC      : out std_logic_vector(127 downto 0);
-    OutSB      : out std_logic_vector(127 downto 0);
-    OutSR      : out std_logic_vector(127 downto 0);
-    MUXPI      : out std_logic_vector(127 downto 0);
-    state      : out std_logic_vector(2 downto 0);
-    rstO       : out std_logic_vector(3 downto 0);
-    sel_0      : out std_logic_vector(2 downto 0);
+    LEDS       : out std_logic_vector(7 downto 0);
+--    OutARK     : out std_logic_vector(127 downto 0);
+--    OutMC      : out std_logic_vector(127 downto 0);
+--    OutSB      : out std_logic_vector(127 downto 0);
+--    OutSR      : out std_logic_vector(127 downto 0);
+--    MUXPI      : out std_logic_vector(127 downto 0);
+--    state      : out std_logic_vector(2 downto 0);
+--    rstO       : out std_logic_vector(3 downto 0);
+    sel_0      : out std_logic_vector(3 downto 0);
     SEG        : out std_logic_vector(6 downto 0)
     );
 end component;
@@ -28,8 +29,9 @@ signal clk, rst, show : std_logic := '0';
 signal done : std_logic;
 signal SeDispBit : std_logic_vector(3 downto 0);
 signal SelInput : std_logic_vector(1 downto 0);
-signal MUXPI,OutARK, OutMC, OutSR, OutSB : std_logic_vector(127 downto 0);
-signal sel_0 : std_logic_vector(2 downto 0);
+signal LEDS : std_logic_vector(7 downto 0);
+-- signal MUXPI,OutARK, OutMC, OutSR, OutSB : std_logic_vector(127 downto 0);
+signal sel_0 : std_logic_vector(3 downto 0);
 signal SEG : std_logic_vector(6 downto 0);
 signal rstO : std_logic_vector(3 downto 0);
 signal state : std_logic_vector(2 downto 0);
@@ -43,17 +45,18 @@ AES: AES_wiring_wrapper port map(
     clk => clk,
     rst => rst,
     done => done,
-    OutARK => OutARK,
-    OutMC => OutMC,
-    OutSR => OutSR,
-    OutSB => OutSB,
-    MuxPI => MUXPI,
-    state => state,
-    rstO => rstO,
+--    OutARK => OutARK,
+--    OutMC => OutMC,
+--    OutSR => OutSR,
+--    OutSB => OutSB,
+--    MuxPI => MUXPI,
+--    state => state,
+--    rstO => rstO,
+    LEDS => LEDS,
     sel_0 => sel_0,
     SEG => SEG);
 
-clk <= not clk after 100 ns;
+clk <= not clk after 10 ns;
 
 process
 begin

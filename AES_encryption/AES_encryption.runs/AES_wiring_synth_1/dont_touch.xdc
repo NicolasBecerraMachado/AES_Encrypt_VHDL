@@ -73,20 +73,14 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_
 # IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_20_0/AES_wiring_xlslice_20_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_xlslice_20_0 || ORIG_REF_NAME==AES_wiring_xlslice_20_0} -quiet] -quiet
 
-# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_ShiftRowns_0_0/AES_wiring_ShiftRowns_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_ShiftRowns_0_0 || ORIG_REF_NAME==AES_wiring_ShiftRowns_0_0} -quiet] -quiet
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_mux_0_1/AES_wiring_mux_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_mux_0_1 || ORIG_REF_NAME==AES_wiring_mux_0_1} -quiet] -quiet
 
-# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_MixColumns_0_0/AES_wiring_MixColumns_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_MixColumns_0_0 || ORIG_REF_NAME==AES_wiring_MixColumns_0_0} -quiet] -quiet
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_ila_0_0/AES_wiring_ila_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_ila_0_0 || ORIG_REF_NAME==AES_wiring_ila_0_0} -quiet] -quiet
 
 # IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_SubBytes_0_0/AES_wiring_SubBytes_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_SubBytes_0_0 || ORIG_REF_NAME==AES_wiring_SubBytes_0_0} -quiet] -quiet
-
-# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_SevenSegCA_0_0/AES_wiring_SevenSegCA_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_SevenSegCA_0_0 || ORIG_REF_NAME==AES_wiring_SevenSegCA_0_0} -quiet] -quiet
-
-# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_SevenSegCA_1_0/AES_wiring_SevenSegCA_1_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_SevenSegCA_1_0 || ORIG_REF_NAME==AES_wiring_SevenSegCA_1_0} -quiet] -quiet
 
 # IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_inputs_0_0/AES_wiring_inputs_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_inputs_0_0 || ORIG_REF_NAME==AES_wiring_inputs_0_0} -quiet] -quiet
@@ -94,20 +88,54 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_
 # IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_mux4_0_0/AES_wiring_mux4_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_mux4_0_0 || ORIG_REF_NAME==AES_wiring_mux4_0_0} -quiet] -quiet
 
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_mux_0_0/AES_wiring_mux_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_mux_0_0 || ORIG_REF_NAME==AES_wiring_mux_0_0} -quiet] -quiet
+
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_ila_1_0/AES_wiring_ila_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_ila_1_0 || ORIG_REF_NAME==AES_wiring_ila_1_0} -quiet] -quiet
+
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_clk_div_0_1/AES_wiring_clk_div_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_clk_div_0_1 || ORIG_REF_NAME==AES_wiring_clk_div_0_1} -quiet] -quiet
+
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_ShiftRowns_0_0/AES_wiring_ShiftRowns_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_ShiftRowns_0_0 || ORIG_REF_NAME==AES_wiring_ShiftRowns_0_0} -quiet] -quiet
+
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_MixColumns_0_0/AES_wiring_MixColumns_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_MixColumns_0_0 || ORIG_REF_NAME==AES_wiring_MixColumns_0_0} -quiet] -quiet
+
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_SevenSegCA_0_0/AES_wiring_SevenSegCA_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_SevenSegCA_0_0 || ORIG_REF_NAME==AES_wiring_SevenSegCA_0_0} -quiet] -quiet
+
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_SevenSegCA_1_0/AES_wiring_SevenSegCA_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_SevenSegCA_1_0 || ORIG_REF_NAME==AES_wiring_SevenSegCA_1_0} -quiet] -quiet
+
 # IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_Display_Manager_0_0/AES_wiring_Display_Manager_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_Display_Manager_0_0 || ORIG_REF_NAME==AES_wiring_Display_Manager_0_0} -quiet] -quiet
+
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_clk_div_0_2/AES_wiring_clk_div_0_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_clk_div_0_2 || ORIG_REF_NAME==AES_wiring_clk_div_0_2} -quiet] -quiet
 
 # IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_AddRoundKey_0_0/AES_wiring_AddRoundKey_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_AddRoundKey_0_0 || ORIG_REF_NAME==AES_wiring_AddRoundKey_0_0} -quiet] -quiet
 
-# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_mux_0_0/AES_wiring_mux_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_mux_0_0 || ORIG_REF_NAME==AES_wiring_mux_0_0} -quiet] -quiet
-
-# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_mux_0_1/AES_wiring_mux_0_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_mux_0_1 || ORIG_REF_NAME==AES_wiring_mux_0_1} -quiet] -quiet
-
 # IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_StateMachine_AES_0_0/AES_wiring_StateMachine_AES_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_StateMachine_AES_0_0 || ORIG_REF_NAME==AES_wiring_StateMachine_AES_0_0} -quiet] -quiet
+
+# XDC: d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_0_0/ila_v6_2/constraints/ila_impl.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==AES_wiring_ila_0_0 || ORIG_REF_NAME==AES_wiring_ila_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_0_0/ila_v6_2/constraints/ila.xdc
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==AES_wiring_ila_0_0 || ORIG_REF_NAME==AES_wiring_ila_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_0_0/AES_wiring_ila_0_0_ooc.xdc
+
+# XDC: d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_1_0/ila_v6_2/constraints/ila_impl.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==AES_wiring_ila_1_0 || ORIG_REF_NAME==AES_wiring_ila_1_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_1_0/ila_v6_2/constraints/ila.xdc
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==AES_wiring_ila_1_0 || ORIG_REF_NAME==AES_wiring_ila_1_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_1_0/AES_wiring_ila_1_0_ooc.xdc
 
 # XDC: d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/AES_wiring_ooc.xdc
 # XDC: The top module name and the constraint reference have the same name: 'AES_wiring'. Do not add the DONT_TOUCH constraint.
@@ -184,20 +212,14 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_
 # IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_xlslice_20_0/AES_wiring_xlslice_20_0.xci
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_xlslice_20_0 || ORIG_REF_NAME==AES_wiring_xlslice_20_0} -quiet] -quiet
 
-# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_ShiftRowns_0_0/AES_wiring_ShiftRowns_0_0.xci
-#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_ShiftRowns_0_0 || ORIG_REF_NAME==AES_wiring_ShiftRowns_0_0} -quiet] -quiet
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_mux_0_1/AES_wiring_mux_0_1.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_mux_0_1 || ORIG_REF_NAME==AES_wiring_mux_0_1} -quiet] -quiet
 
-# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_MixColumns_0_0/AES_wiring_MixColumns_0_0.xci
-#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_MixColumns_0_0 || ORIG_REF_NAME==AES_wiring_MixColumns_0_0} -quiet] -quiet
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_ila_0_0/AES_wiring_ila_0_0.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_ila_0_0 || ORIG_REF_NAME==AES_wiring_ila_0_0} -quiet] -quiet
 
 # IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_SubBytes_0_0/AES_wiring_SubBytes_0_0.xci
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_SubBytes_0_0 || ORIG_REF_NAME==AES_wiring_SubBytes_0_0} -quiet] -quiet
-
-# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_SevenSegCA_0_0/AES_wiring_SevenSegCA_0_0.xci
-#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_SevenSegCA_0_0 || ORIG_REF_NAME==AES_wiring_SevenSegCA_0_0} -quiet] -quiet
-
-# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_SevenSegCA_1_0/AES_wiring_SevenSegCA_1_0.xci
-#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_SevenSegCA_1_0 || ORIG_REF_NAME==AES_wiring_SevenSegCA_1_0} -quiet] -quiet
 
 # IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_inputs_0_0/AES_wiring_inputs_0_0.xci
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_inputs_0_0 || ORIG_REF_NAME==AES_wiring_inputs_0_0} -quiet] -quiet
@@ -205,20 +227,54 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_
 # IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_mux4_0_0/AES_wiring_mux4_0_0.xci
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_mux4_0_0 || ORIG_REF_NAME==AES_wiring_mux4_0_0} -quiet] -quiet
 
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_mux_0_0/AES_wiring_mux_0_0.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_mux_0_0 || ORIG_REF_NAME==AES_wiring_mux_0_0} -quiet] -quiet
+
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_ila_1_0/AES_wiring_ila_1_0.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_ila_1_0 || ORIG_REF_NAME==AES_wiring_ila_1_0} -quiet] -quiet
+
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_clk_div_0_1/AES_wiring_clk_div_0_1.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_clk_div_0_1 || ORIG_REF_NAME==AES_wiring_clk_div_0_1} -quiet] -quiet
+
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_ShiftRowns_0_0/AES_wiring_ShiftRowns_0_0.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_ShiftRowns_0_0 || ORIG_REF_NAME==AES_wiring_ShiftRowns_0_0} -quiet] -quiet
+
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_MixColumns_0_0/AES_wiring_MixColumns_0_0.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_MixColumns_0_0 || ORIG_REF_NAME==AES_wiring_MixColumns_0_0} -quiet] -quiet
+
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_SevenSegCA_0_0/AES_wiring_SevenSegCA_0_0.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_SevenSegCA_0_0 || ORIG_REF_NAME==AES_wiring_SevenSegCA_0_0} -quiet] -quiet
+
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_SevenSegCA_1_0/AES_wiring_SevenSegCA_1_0.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_SevenSegCA_1_0 || ORIG_REF_NAME==AES_wiring_SevenSegCA_1_0} -quiet] -quiet
+
 # IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_Display_Manager_0_0/AES_wiring_Display_Manager_0_0.xci
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_Display_Manager_0_0 || ORIG_REF_NAME==AES_wiring_Display_Manager_0_0} -quiet] -quiet
+
+# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_clk_div_0_2/AES_wiring_clk_div_0_2.xci
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_clk_div_0_2 || ORIG_REF_NAME==AES_wiring_clk_div_0_2} -quiet] -quiet
 
 # IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_AddRoundKey_0_0/AES_wiring_AddRoundKey_0_0.xci
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_AddRoundKey_0_0 || ORIG_REF_NAME==AES_wiring_AddRoundKey_0_0} -quiet] -quiet
 
-# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_mux_0_0/AES_wiring_mux_0_0.xci
-#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_mux_0_0 || ORIG_REF_NAME==AES_wiring_mux_0_0} -quiet] -quiet
-
-# IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_mux_0_1/AES_wiring_mux_0_1.xci
-#dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_mux_0_1 || ORIG_REF_NAME==AES_wiring_mux_0_1} -quiet] -quiet
-
 # IP: D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/ip/AES_wiring_StateMachine_AES_0_0/AES_wiring_StateMachine_AES_0_0.xci
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==AES_wiring_StateMachine_AES_0_0 || ORIG_REF_NAME==AES_wiring_StateMachine_AES_0_0} -quiet] -quiet
+
+# XDC: d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_0_0/ila_v6_2/constraints/ila_impl.xdc
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==AES_wiring_ila_0_0 || ORIG_REF_NAME==AES_wiring_ila_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_0_0/ila_v6_2/constraints/ila.xdc
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==AES_wiring_ila_0_0 || ORIG_REF_NAME==AES_wiring_ila_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_0_0/AES_wiring_ila_0_0_ooc.xdc
+
+# XDC: d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_1_0/ila_v6_2/constraints/ila_impl.xdc
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==AES_wiring_ila_1_0 || ORIG_REF_NAME==AES_wiring_ila_1_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_1_0/ila_v6_2/constraints/ila.xdc
+#dup# set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==AES_wiring_ila_1_0 || ORIG_REF_NAME==AES_wiring_ila_1_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_1_0/AES_wiring_ila_1_0_ooc.xdc
 
 # XDC: d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/AES_wiring_ooc.xdc
 # XDC: The top module name and the constraint reference have the same name: 'AES_wiring'. Do not add the DONT_TOUCH constraint.

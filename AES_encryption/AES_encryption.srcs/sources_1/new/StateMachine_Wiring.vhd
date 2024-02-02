@@ -7,7 +7,7 @@ entity StateMachine_AES is port(
     done : out std_logic; --use to siplay AES or not
     muxIn : out std_logic;
     muxLR : out std_logic; -- use in the last round to select between mixColumns and SR
-    stateO : out std_logic_vector(2 downto 0);
+    stateO,nextStateO : out std_logic_vector(2 downto 0);
     --sel : in std_logic_vector(2 downto 0);
     rstO : out std_logic_vector(3 downto 0)
 );
@@ -15,17 +15,16 @@ end StateMachine_AES;
 
 architecture Behavioral of StateMachine_AES is
     signal ct : integer range 1 to 10;
-    signal state, next_state : std_logic_vector(2 downto 0);
-    signal notClk : std_logic;
+    signal state      : std_logic_vector(2 downto 0) := "110";
+    signal next_state : std_logic_vector(2 downto 0) := "110";
 begin
 
-notClk <= not clk;
-
 stateO <= state;
+nextStateO <= next_state;
 
 process(clk)
 begin
-    if rising_edge(clk) then
+    if clk'event and clk = '1' then
         if rst = '1' then
             state <= "000";
             ct <= 1;
@@ -38,59 +37,70 @@ begin
     end if;
 end process;
 
-process(state,notClk)
+process(state,rst)
 begin
-case state is
-    when "000" => --begin
+    if state = "000" then --begin
         next_state <= "001";
-        if rising_edge(notClk) then
-            rstO <= "0001"; -- make SB read
-        end if;
+--        if falling_edge(Clk) then
+--            rstO <= "0001"; -- make SB read
+--        end if;
+        rstO <= "0001";
         done <= '0';
         muxIn <= '1';
         muxLR <= '0';
-    when "001" => -- subBytes
+    elsif state = "001" then -- subBytes
         next_state <= "010";
-        if rising_edge(notClk) then
-            rstO <= "0010"; --make SR read
-        end if;
-    when "010" => --SR
+--        if falling_edge(Clk) then
+--            rstO <= "0010"; --make SR read
+--        end if;
+        rstO <= "0010"; --make SR read
+        done <= '0';
+    elsif state = "010" then --SR
         if ct = 10 then 
             next_state <= "100";         
         else
             next_state <= "011";
         end if;
-        if rising_edge(notClk) then
-            if ct = 10 then
+--        if falling_edge(Clk) then
+--            if ct = 10 then
+--                muxLR <= '1'; -- select the SR result as input for ARK 
+--                rstO <= "1000";
+--            else
+--                rstO <= "0100"; --make MC read
+--            end if;
+--        end if;
+        if ct = 10 then
                 muxLR <= '1'; -- select the SR result as input for ARK 
                 rstO <= "1000";
             else
                 rstO <= "0100"; --make MC read
-            end if;
         end if;
-        muxIn <= '0';--change mux of ARK
-    when "011" => --MC
+        done <= '0';
+    elsif state = "011" then --MC
         next_state <= "100";
-        if rising_edge(notClk) then
-            rstO <= "1000"; -- update ARK counter
-        end if;
-    when "100" => --ARK
+--        if falling_edge(Clk) then
+--            rstO <= "1000"; -- update ARK counter
+--        end if;
+        rstO <= "1000";
+        muxIn <= '0';--change mux of ARK
+        done <= '0';
+    elsif state = "100" then --ARK
         if ct = 10 then
             next_state <= "101"; -- end
         else
             next_state <= "001"; -- loop back to subBytes
         end if;
-        if rising_edge(notClk) then
-            rstO <= "0001"; -- update ARK counter
-        end if;
-    when "101" => --end
+--        if falling_edge(Clk) then
+--            rstO <= "0001"; -- update ARK counter
+--        end if;
+        rstO <= "0001";
+        done <= '0';
+    elsif state = "101" then --end
         next_state <= "101";
         rstO <= "0000";
         done <= '1';
-    when others =>
-        next_state <= "111";
-        rstO <= "0000";
-    end case;
+    else
+    end if;
 end process;
 
 end Behavioral;

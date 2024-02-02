@@ -62,10 +62,11 @@ module AES_wiring_StateMachine_AES_0_0 (
   muxIn,
   muxLR,
   stateO,
+  nextStateO,
   rstO
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 4000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN AES_wiring_clk, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
@@ -75,6 +76,7 @@ output wire done;
 output wire muxIn;
 output wire muxLR;
 output wire [2 : 0] stateO;
+output wire [2 : 0] nextStateO;
 output wire [3 : 0] rstO;
 
   StateMachine_AES inst (
@@ -84,6 +86,7 @@ output wire [3 : 0] rstO;
     .muxIn(muxIn),
     .muxLR(muxLR),
     .stateO(stateO),
+    .nextStateO(nextStateO),
     .rstO(rstO)
   );
 endmodule

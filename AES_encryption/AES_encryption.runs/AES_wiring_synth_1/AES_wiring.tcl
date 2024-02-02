@@ -70,7 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "AES_wiring_synth_1" START { ROLLUP_AUTO }
-set_msg_config -id {Common 17-41} -limit 10000000
+set_param chipscope.maxJobs 3
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
@@ -81,6 +81,7 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.cache/wt [current_project]
 set_property parent.project_path D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.xpr [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
@@ -89,21 +90,30 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
+  D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/mux.vhd
+  D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/S_box.vhd
+  D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/SubBytes.vhd
+  D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/inputs.vhd
+  D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/mux4.vhd
+  D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/clk_div.vhd
   D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/ShiftRowns.vhd
   D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul2.vhd
   D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/LUT_mul3.vhd
   D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/MixColumns.vhd
-  D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/S_box.vhd
-  D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/SubBytes.vhd
   D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/SevenSegCA.vhd
-  D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/inputs.vhd
-  D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/mux4.vhd
   D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/Display_Manager.vhd
   D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/AddRoundKeys.vhd
-  D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/mux.vhd
   D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/new/StateMachine_Wiring.vhd
 }
 add_files D:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.srcs/sources_1/bd/AES_wiring/AES_wiring.bd
+set_property used_in_synthesis false [get_files -all d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_0_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_0_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_0_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_0_0/AES_wiring_ila_0_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_1_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_1_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_1_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/ip/AES_wiring_ila_1_0/AES_wiring_ila_1_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all d:/repos/AES_Encrypt_VHDL/AES_encryption/AES_encryption.gen/sources_1/bd/AES_wiring/AES_wiring_ooc.xdc]
 
 OPTRACE "Adding files" END { }

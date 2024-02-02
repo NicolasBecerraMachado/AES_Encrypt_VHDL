@@ -59,18 +59,16 @@ module AES_wiring_MixColumns_0_0 (
   INPUTs,
   clk,
   rst,
-  done,
   OUTPUTs
 );
 
 input wire [127 : 0] INPUTs;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 4000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN AES_wiring_clk, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
 input wire rst;
-output wire done;
 output wire [127 : 0] OUTPUTs;
 
   MixColumns #(
@@ -79,7 +77,6 @@ output wire [127 : 0] OUTPUTs;
     .INPUTs(INPUTs),
     .clk(clk),
     .rst(rst),
-    .done(done),
     .OUTPUTs(OUTPUTs)
   );
 endmodule
